@@ -1,1 +1,772 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SORA | Agence d'Accueil Événementiel & Expériences Premium</title>
+<meta name="description" content="SORA Agency : élégance, innovation et excellence dans l'accueil événementiel, hôtesses professionnelles, accompagnement VIP et marketing expérientiel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
+  :root {
+    --gold: #C6A43F;
+    --gold-light: #E4C87A;
+    --dark-bg: #0F0F0F;
+    --dark-card: #141414;
+    --gray-soft: #F5F5F0;
+    --text-light: #FFFFFF;
+    --text-muted: #B0B0B0;
+    --transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--gray-soft);
+    color: #1A1A1A;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .logo, .section-title {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.02em;
+  }
+
+  /* smooth scroll & reveal */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* custom cursor effect (optional modern) */
+  ::selection {
+    background: var(--gold);
+    color: #0F0F0F;
+  }
+
+  /* HEADER - glassmorphism moderne */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem 6%;
+    background: rgba(15, 15, 15, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: var(--transition);
+    border-bottom: 1px solid rgba(198, 164, 63, 0.2);
+  }
+
+  .logo {
+    font-size: 1.9rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.5px;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    letter-spacing: 0.3px;
+    position: relative;
+  }
+
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--gold);
+    transition: 0.3s ease;
+  }
+
+  nav a:hover::after {
+    width: 100%;
+  }
+
+  nav a:hover {
+    color: var(--gold-light);
+  }
+
+  /* HERO SECTION - vidéo + overlay dynamique */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(0.55);
+    transition: transform 10s ease;
+    transform: scale(1.05);
+  }
+
+  .hero:hover .hero-bg {
+    transform: scale(1.08);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 20%, rgba(0,0,0,0.4), rgba(0,0,0,0.75));
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 1.5rem;
+    animation: fadeUp 1s ease-out;
+  }
+
+  .hero-content h1 {
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+
+  .hero-content p {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 2rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.9rem 2.2rem;
+    background: var(--gold);
+    color: #0F0F0F;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 1.5px solid var(--gold);
+    color: white;
+  }
+
+  .btn-outline:hover {
+    background: var(--gold);
+    color: #0F0F0F;
+    transform: translateY(-3px);
+  }
+
+  .btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 25px -10px rgba(198, 164, 63, 0.4);
+    background: var(--gold-light);
+  }
+
+  /* sections globales */
+  .section {
+    padding: 6rem 6%;
+  }
+
+  .section-dark {
+    background-color: var(--dark-bg);
+    color: white;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .section-title span {
+    background: linear-gradient(120deg, var(--gold), var(--gold-light));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .title-decoration {
+    width: 70px;
+    height: 3px;
+    background: var(--gold);
+    margin: 0.5rem auto 0;
+    border-radius: 3px;
+  }
+
+  /* about grid moderne */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about-img img {
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: 0 25px 40px -20px rgba(0,0,0,0.3);
+    transition: var(--transition);
+  }
+
+  .about-img img:hover {
+    transform: scale(1.02);
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #2c2c2c;
+    margin-bottom: 1.5rem;
+  }
+
+  .badge-list {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .badge {
+    background: rgba(198, 164, 63, 0.15);
+    padding: 0.4rem 1rem;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #B68B2F;
+  }
+
+  /* services cards - effet glass */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    background: white;
+    padding: 2rem 1.8rem;
+    border-radius: 32px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.02);
+  }
+
+  .service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 40px -15px rgba(0, 0, 0, 0.1);
+    border-color: rgba(198, 164, 63, 0.3);
+  }
+
+  .service-icon {
+    font-size: 2.8rem;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* stats modernes */
+  .stats-section {
+    background: linear-gradient(120deg, #121212 0%, #1e1e1e 100%);
+    padding: 5rem 6%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .stat-item h2 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -1px;
+  }
+
+  .stat-item p {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    color: #ddd;
+  }
+
+  /* REALISATIONS GALLERY (modern carrousel / grid) */
+  .gallery-preview {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+  }
+
+  .gallery-card {
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    height: 280px;
+    cursor: pointer;
+  }
+
+  .gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .gallery-card:hover img {
+    transform: scale(1.08);
+  }
+
+  .gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,0.8), transparent);
+    padding: 1.5rem;
+    color: white;
+    font-weight: 500;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .gallery-card:hover .gallery-overlay {
+    opacity: 1;
+  }
+
+  /* CTA section premium */
+  .cta-modern {
+    background: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80') center/cover fixed;
+    position: relative;
+    padding: 7rem 6%;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+  }
+
+  .cta-modern > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-modern h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  /* footer élégant */
+  footer {
+    background: #0A0A0A;
+    padding: 3rem 6%;
+    text-align: center;
+    border-top: 1px solid rgba(198, 164, 63, 0.2);
+  }
+
+  .footer-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .social-links a {
+    color: white;
+    font-size: 1.2rem;
+    transition: var(--transition);
+  }
+
+  .social-links a:hover {
+    color: var(--gold);
+    transform: translateY(-3px);
+  }
+
+  /* mobile & responsive */
+  .menu-btn {
+    display: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  @media (max-width: 850px) {
+    .menu-btn {
+      display: block;
+    }
+    nav {
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background: rgba(10,10,10,0.98);
+      backdrop-filter: blur(12px);
+      padding: 1.8rem;
+      border-radius: 0 0 28px 28px;
+      display: none;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.3);
+    }
+    nav.active {
+      display: block;
+    }
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.4rem;
+    }
+    .hero-content h1 {
+      font-size: 2.8rem;
+    }
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .section-title {
+      font-size: 2.2rem;
+    }
+    .cta-modern h2 {
+      font-size: 2rem;
+    }
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(35px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .btn i, .btn-outline i {
+    font-size: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">SORA</div>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <nav id="menu">
+    <ul>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#realisations">Réalisations</a></li>
+      <li><a href="#contact" id="contactLink">Contact</a></li>
+      <li><a href="#devis" class="gold-link">Devis express</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO modernisé avec vidéo ambient (image premium) -->
+<section id="accueil" class="hero">
+  <img class="hero-bg" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=2000&q=85" alt="event luxury background">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>L'élégance au service de votre image</h1>
+    <p>Expériences d'accueil sur-mesure, hôtesses d'excellence et brand activation. SORA réinvente l'accueil événementiel avec une signature premium et créative.</p>
+    <div class="btn-group">
+      <a href="#devis" class="btn"><i class="fas fa-calendar-check"></i> Demander un devis</a>
+      <a href="#about" class="btn-outline btn"><i class="fas fa-play-circle"></i> Découvrir l'agence</a>
+    </div>
+  </div>
+</section>
+
+<!-- À propos section modernisée -->
+<section id="about" class="section">
+  <h2 class="section-title"><span>À propos</span> · Notre ADN <div class="title-decoration"></div></h2>
+  <div class="about-grid">
+    <div class="about-img reveal">
+      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80" alt="équipe SORA professionnelle">
+    </div>
+    <div class="about-text reveal">
+      <p><strong>SORA Agency</strong> incarne l’excellence française dans l’accueil événementiel haut de gamme. Depuis 8 ans, nous sélectionnons et formons des talents d’accueil pour des congrès internationaux, lancements de produits, salons VIP et expériences immersives.</p>
+      <p>Notre philosophie : allier <strong>design humain et luxe silencieux</strong>. Chaque hôtesse, chaque chargé d’accueil SORA est ambassadeur de votre marque. Nous ne gérons pas seulement du personnel, nous créons des émotions et des souvenirs.</p>
+      <div class="badge-list">
+        <span class="badge"><i class="fas fa-gem"></i> Label Prestige</span>
+        <span class="badge"><i class="fas fa-certificate"></i> ISO 9001:2025</span>
+        <span class="badge"><i class="fas fa-hand-sparkles"></i> Excellence opérationnelle</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services mise à jour (icons & descriptions) -->
+<section id="services" class="section section-dark">
+  <h2 class="section-title"><span>Nos services</span> signature SORA <div class="title-decoration"></div></h2>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon"><i class="fas fa-champagne-glasses"></i></div>
+      <h3>Accueil Événementiel</h3>
+      <p>Congrès, conférences, soirées de gala : une équipe dédiée pour une réception fluide et prestigieuse.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+      <h3>Hôtesses d'excellence</h3>
+      <p>Recrutement & formation pointue : maîtrise des langues, image soignée, sens du détail.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><i class="fas fa-crown"></i></div>
+      <h3>Accompagnement VIP</h3>
+      <p>Service white glove, conciergerie dédiée et gestion protocolaire pour vos invités prestigieux.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+      <h3>Brand Experience</h3>
+      <p>Street marketing, sampling, activation événementielle · des expériences qui convertissent.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Stats avec counter amélioré -->
+<div class="stats-section">
+  <div class="stat-item"><h2 class="counter" data-target="248">0</h2><p>Événements Live</p></div>
+  <div class="stat-item"><h2 class="counter" data-target="612">0</h2><p>Clients Premium</p></div>
+  <div class="stat-item"><h2 class="counter" data-target="124">0</h2><p>Hôtesses & Hosts</p></div>
+  <div class="stat-item"><h2 class="counter" data-target="12">0</h2><p>Années d'expérience</p></div>
+</div>
+
+<!-- Réalisations gallery dynamique -->
+<section id="realisations" class="section">
+  <h2 class="section-title"><span>Nos réalisations</span> · Projets d'exception <div class="title-decoration"></div></h2>
+  <div class="gallery-preview">
+    <div class="gallery-card"><img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=800&q=80" alt="gala event"><div class="gallery-overlay">Gala de l'élégance 2025</div></div>
+    <div class="gallery-card"><img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=800&q=80" alt="automobile show"><div class="gallery-overlay">Mondial de l'Auto | VIP Lounge</div></div>
+    <div class="gallery-card"><img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80" alt="fashion week"><div class="gallery-overlay">Paris Fashion Week · Front Row</div></div>
+  </div>
+  <div style="text-align: center; margin-top: 2.5rem;">
+    <a href="#" class="btn-outline btn" style="background: transparent; border-color: var(--gold);">Voir toute la galerie <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- CTA amélioré avec formulaire de contact simplifié / section contact direct -->
+<section id="contact" class="cta-modern">
+  <h2>Elevate your event with SORA</h2>
+  <p style="max-width: 700px; margin: 0 auto 2rem auto;">Réservez une consultation gratuite avec notre directeur artistique et découvrez comment sublimer votre prochain événement.</p>
+  <a href="#devis" class="btn" style="background: white; color: #0F0F0F;"><i class="fas fa-paper-plane"></i> Contactez-nous</a>
+</section>
+
+<!-- Devis express (form mockup avec interaction fluide) -->
+<section id="devis" class="section" style="background: #FFFFFF; border-radius: 40px 40px 0 0; margin-top: -2rem; box-shadow: 0 -10px 30px rgba(0,0,0,0.02);">
+  <h2 class="section-title">Demande de <span>devis personnalisé</span><div class="title-decoration"></div></h2>
+  <div style="max-width: 750px; margin: 0 auto; background: #FEFEF7; border-radius: 28px; padding: 2rem; box-shadow: 0 15px 40px rgba(0,0,0,0.05);">
+    <form id="quickQuote">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1rem;">
+        <input type="text" placeholder="Nom & Prénom" required style="padding: 1rem; border-radius: 60px; border: 1px solid #e0e0e0; font-family: inherit;">
+        <input type="email" placeholder="Email professionnel" required style="padding: 1rem; border-radius: 60px; border: 1px solid #e0e0e0;">
+        <input type="tel" placeholder="Téléphone" style="padding: 1rem; border-radius: 60px; border: 1px solid #e0e0e0;">
+        <select style="padding: 1rem; border-radius: 60px; border: 1px solid #e0e0e0; background: white;">
+          <option>Type d'événement</option>
+          <option>Salon professionnel</option>
+          <option>Gala / Soirée privée</option>
+          <option>Lancement produit</option>
+          <option>Congrès / Conférence</option>
+        </select>
+      </div>
+      <textarea rows="3" placeholder="Décrivez votre besoin, date, nombre d'hôtesses souhaité..." style="width: 100%; padding: 1rem; border-radius: 24px; border: 1px solid #e0e0e0; margin-bottom: 1rem; font-family: inherit;"></textarea>
+      <button type="submit" class="btn" style="width: 100%; justify-content: center; background: var(--gold);"><i class="fas fa-send"></i> Recevoir un devis premium</button>
+      <p style="font-size: 0.75rem; margin-top: 1rem; text-align: center; color: #7a7a7a;">Réponse sous 24h garantie · Chiffrage personnalisé</p>
+    </form>
+    <div id="formResponse" style="margin-top: 1rem; text-align: center; font-weight: 500; color: #C6A43F;"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">SORA</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-behance"></i></a>
+    <a href="#"><i class="fab fa-x-twitter"></i></a>
+  </div>
+  <p>Accueil · Excellence · Créativité</p>
+  <p style="color: #666; font-size: 0.85rem; margin-top: 1rem;">© 2026 SORA Agency — Tous droits réservés. Agence d'accueil événementiel certifiée</p>
+</footer>
+
+<script>
+  // Menu mobile toggle
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('active');
+  }
+
+  // Counter animation (optimized)
+  const counters = document.querySelectorAll('.counter');
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const current = parseInt(counter.innerText);
+      if (current < target) {
+        let increment = Math.ceil(target / 45);
+        let newVal = Math.min(current + increment, target);
+        counter.innerText = newVal;
+        setTimeout(animateCounters, 25);
+      } else {
+        counter.innerText = target;
+      }
+    });
+  };
+  
+  // Intersection Observer for counters & reveal
+  const observerOptions = { threshold: 0.3, rootMargin: "0px 0px -20px 0px" };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (entry.target.classList.contains('stats-section')) {
+          animateCounters();
+          observer.unobserve(entry.target);
+        }
+        if (entry.target.classList.contains('reveal')) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      }
+    });
+  }, observerOptions);
+  
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  const statsSection = document.querySelector('.stats-section');
+  if(statsSection) observer.observe(statsSection);
+  
+  // initial counters set zero
+  counters.forEach(c => { c.innerText = '0'; });
+  
+  // Smooth anchor scroll (for internal links)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if(targetId === "#" || targetId === "") return;
+      const targetElem = document.querySelector(targetId);
+      if(targetElem) {
+        e.preventDefault();
+        targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if(menu.classList.contains('active')) toggleMenu();
+      }
+    });
+  });
+  
+  // simple form simulation (modern & responsive)
+  const quoteForm = document.getElementById('quickQuote');
+  const responseDiv = document.getElementById('formResponse');
+  if(quoteForm){
+    quoteForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      responseDiv.innerHTML = '<i class="fas fa-check-circle"></i> Merci ! Notre équipe SORA vous recontactera sous 24h avec un devis sur-mesure.';
+      responseDiv.style.color = '#C6A43F';
+      quoteForm.reset();
+      setTimeout(() => { responseDiv.innerHTML = ''; }, 5000);
+    });
+  }
+  
+  // dynamic header shrink on scroll
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if(window.scrollY > 50){
+      header.style.padding = "0.8rem 6%";
+      header.style.background = "rgba(15,15,15,0.96)";
+    } else {
+      header.style.padding = "1.2rem 6%";
+      header.style.background = "rgba(15,15,15,0.85)";
+    }
+  });
+  
+  // gallery overlay no additional needed
+</script>
+</body>
+</html>
