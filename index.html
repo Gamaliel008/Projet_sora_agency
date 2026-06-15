@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="SORA Agency : agence d'accueil événementiel haut de gamme. Hôtesses professionnelles, accompagnement VIP et marketing expérientiel pour valoriser votre image.">
-  <meta name="theme-color" content="#C6A43F">
+  <meta name="description" content="SORA Agency : Agence d'accueil événementiel haut de gamme. Hôtesses professionnelles, accompagnement VIP, brand activation.">
   <title>SORA Agency | Accueil événementiel d'excellence</title>
   
-  <!-- Google Fonts optimisé avec variable + fallback -->
+  <!-- Google Fonts premium -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <style>
-    /* ===== RESET & VARIABLES MODERNES ===== */
+    /* ===== RESET & COULEURS SORA ===== */
     * {
       margin: 0;
       padding: 0;
@@ -21,63 +21,57 @@
     }
 
     :root {
-      --gold: #C6A43F;
-      --gold-dark: #A8882E;
-      --gold-light: #E0C26A;
-      --dark-bg: #0F0F0F;
-      --dark-card: #141414;
-      --gray-bg: #F9F9F6;
-      --text-dark: #1A1A1A;
-      --text-gray: #4A4A4A;
-      --text-light: #FFFFFF;
-      --shadow-sm: 0 12px 30px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
-      --shadow-hover: 0 25px 40px -12px rgba(0, 0, 0, 0.2);
-      --transition-smooth: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      --border-radius-card: 28px;
-      --border-radius-btn: 60px;
+      --sora-gold: #C6A43F;       /* Or élégant */
+      --sora-gold-dark: #A8882E;  /* Or profond */
+      --sora-gold-light: #E0C26A; /* Or lumineux */
+      --sora-black: #0A0A0A;      /* Noir absolu */
+      --sora-dark: #121212;       /* Noir subtil */
+      --sora-gray-bg: #F8F8F6;    /* Fond clair raffiné */
+      --sora-text-dark: #1E1E1E;
+      --sora-text-muted: #5A5A5A;
+      --sora-white: #FFFFFF;
+      --sora-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+      --sora-transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     body {
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
-      background-color: var(--gray-bg);
-      color: var(--text-dark);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--sora-gray-bg);
+      color: var(--sora-text-dark);
       line-height: 1.5;
       overflow-x: hidden;
     }
 
     h1, h2, h3, .logo {
-      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-weight: 600;
       letter-spacing: -0.02em;
     }
 
-    /* ===== HEADER GLASS ===== */
+    /* ===== HEADER PREMIUM ===== */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       padding: 1.2rem 6%;
-      background: rgba(15, 15, 15, 0.85);
+      background: rgba(10, 10, 10, 0.92);
       backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
-      transition: var(--transition-smooth);
-      border-bottom: 1px solid rgba(198, 164, 63, 0.2);
+      transition: var(--sora-transition);
+      border-bottom: 1px solid rgba(198, 164, 63, 0.25);
     }
 
     .logo {
       font-size: 2rem;
       font-weight: 700;
-      background: linear-gradient(135deg, var(--gold-light), var(--gold));
-      background-clip: text;
+      background: linear-gradient(135deg, var(--sora-gold-light), var(--sora-gold));
       -webkit-background-clip: text;
+      background-clip: text;
       color: transparent;
-      letter-spacing: -0.02em;
     }
 
     nav ul {
@@ -88,34 +82,34 @@
 
     nav a {
       text-decoration: none;
-      color: var(--text-light);
+      color: white;
       font-weight: 500;
       font-size: 0.95rem;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
       position: relative;
-      padding-bottom: 0.25rem;
     }
 
     nav a::after {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: -6px;
       left: 0;
       width: 0%;
       height: 2px;
-      background: var(--gold);
-      transition: width 0.3s ease;
+      background: var(--sora-gold);
+      transition: width 0.3s;
     }
 
-    nav a:hover::after {
+    nav a:hover::after,
+    nav a.active::after {
       width: 100%;
     }
 
     nav a:hover {
-      color: var(--gold-light);
+      color: var(--sora-gold-light);
     }
 
-    /* ===== HERO SECTION ===== */
+    /* ===== HERO ===== */
     .hero {
       position: relative;
       height: 100vh;
@@ -135,7 +129,7 @@
       height: 100%;
       object-fit: cover;
       z-index: 0;
-      filter: brightness(0.55);
+      filter: brightness(0.5);
       transition: transform 12s ease;
     }
 
@@ -149,7 +143,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 30% 20%, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.75));
+      background: radial-gradient(circle at 30% 20%, rgba(0,0,0,0.4), rgba(0,0,0,0.75));
       z-index: 1;
     }
 
@@ -158,31 +152,25 @@
       z-index: 2;
       max-width: 880px;
       padding: 0 1.5rem;
-      animation: fadeInUp 1.1s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+      animation: fadeUp 1s ease-out;
     }
 
     .hero-content h1 {
       font-size: 4.8rem;
-      font-weight: 700;
       color: white;
-      margin-bottom: 1.2rem;
-      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-      line-height: 1.2;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 25px rgba(0,0,0,0.3);
     }
 
     .hero-content p {
-      font-size: 1.3rem;
-      color: rgba(255, 255, 255, 0.92);
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.92);
       margin-bottom: 2rem;
-      font-weight: 400;
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .btn-group {
       display: flex;
-      gap: 1.2rem;
+      gap: 1rem;
       justify-content: center;
       flex-wrap: wrap;
     }
@@ -192,38 +180,34 @@
       align-items: center;
       gap: 0.6rem;
       padding: 0.9rem 2.2rem;
-      background: var(--gold);
-      color: #0F0F0F;
+      background: var(--sora-gold);
+      color: #0A0A0A;
       text-decoration: none;
       font-weight: 600;
-      border-radius: var(--border-radius-btn);
-      transition: var(--transition-smooth);
+      border-radius: 60px;
+      transition: var(--sora-transition);
       font-size: 1rem;
-      letter-spacing: 0.3px;
-      border: none;
-      cursor: pointer;
     }
 
     .btn-outline {
       background: transparent;
-      border: 1.5px solid var(--gold);
+      border: 1.5px solid var(--sora-gold);
       color: white;
     }
 
     .btn-outline:hover {
-      background: var(--gold);
-      color: #0F0F0F;
-      transform: translateY(-4px);
-      box-shadow: 0 12px 22px -10px rgba(198, 164, 63, 0.5);
+      background: var(--sora-gold);
+      color: #0A0A0A;
+      transform: translateY(-3px);
     }
 
     .btn:hover {
       transform: translateY(-4px);
-      box-shadow: 0 15px 25px -10px rgba(198, 164, 63, 0.45);
-      background: var(--gold-light);
+      box-shadow: 0 15px 25px -10px rgba(198,164,63,0.5);
+      background: var(--sora-gold-light);
     }
 
-    /* ===== SECTIONS GÉNÉRALES ===== */
+    /* ===== SECTIONS ===== */
     .section {
       padding: 6rem 6%;
     }
@@ -232,26 +216,23 @@
       text-align: center;
       font-size: 2.8rem;
       margin-bottom: 3rem;
-      font-weight: 600;
-      position: relative;
     }
 
     .section-title span {
-      background: linear-gradient(120deg, var(--gold), var(--gold-dark));
-      background-clip: text;
+      background: linear-gradient(120deg, var(--sora-gold), var(--sora-gold-dark));
       -webkit-background-clip: text;
+      background-clip: text;
       color: transparent;
     }
 
     .title-decoration {
       width: 70px;
       height: 3px;
-      background: var(--gold);
-      margin: 0.8rem auto 0;
+      background: var(--sora-gold);
+      margin: 0.6rem auto 0;
       border-radius: 4px;
     }
 
-    /* About */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -259,69 +240,59 @@
       align-items: center;
     }
 
-    .about-img img {
+    .about-grid img {
       width: 100%;
-      border-radius: 32px;
-      box-shadow: var(--shadow-md);
-      transition: var(--transition-smooth);
+      border-radius: 28px;
+      box-shadow: var(--sora-shadow);
+      transition: var(--sora-transition);
     }
 
-    .about-img img:hover {
+    .about-grid img:hover {
       transform: scale(1.02);
     }
 
     .about-text p {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       line-height: 1.7;
-      color: var(--text-gray);
+      color: var(--sora-text-muted);
       margin-bottom: 1rem;
     }
 
-    /* Services cartes modernes */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
       gap: 2rem;
-      margin-top: 1rem;
     }
 
     .service-card {
       background: white;
       padding: 2rem 1.8rem;
-      border-radius: var(--border-radius-card);
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition-smooth);
+      border-radius: 28px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.05);
+      transition: var(--sora-transition);
       text-align: center;
-      border: 1px solid rgba(0, 0, 0, 0.02);
     }
 
     .service-card:hover {
-      transform: translateY(-12px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(198, 164, 63, 0.2);
+      transform: translateY(-10px);
+      box-shadow: 0 25px 40px -15px rgba(0,0,0,0.12);
+      border-bottom: 2px solid var(--sora-gold);
     }
 
     .service-icon {
       font-size: 2.8rem;
-      color: var(--gold);
-      margin-bottom: 1.2rem;
+      color: var(--sora-gold);
+      margin-bottom: 1rem;
     }
 
     .service-card h3 {
       font-size: 1.5rem;
-      font-weight: 600;
       margin-bottom: 0.8rem;
-      font-family: 'Playfair Display', serif;
     }
 
-    .service-card p {
-      color: var(--text-gray);
-      line-height: 1.5;
-    }
-
-    /* Stats section avec animation counters */
+    /* STATS */
     .stats-section {
-      background: linear-gradient(115deg, #121212 0%, #1E1E1E 100%);
+      background: linear-gradient(115deg, #0F0F0F 0%, #1A1A1A 100%);
       padding: 5rem 6%;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -330,114 +301,121 @@
     }
 
     .stat-item h2 {
-      font-size: 3.2rem;
+      font-size: 3rem;
       font-weight: 700;
-      color: var(--gold);
+      color: var(--sora-gold);
       font-family: 'Inter', sans-serif;
-      letter-spacing: -1px;
     }
 
     .stat-item p {
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 500;
       color: #CCCCCC;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.85rem;
+      font-weight: 500;
     }
 
-    /* CTA Premium */
+    /* CTA */
     .cta-premium {
-      background: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80') center/cover fixed;
-      position: relative;
-      padding: 7rem 6%;
+      background: linear-gradient(120deg, #121212, #1E1E1E);
+      padding: 5rem 6%;
       text-align: center;
       color: white;
     }
 
-    .cta-premium::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-    }
-
-    .cta-premium > * {
-      position: relative;
-      z-index: 2;
-    }
-
     .cta-premium h2 {
-      font-size: 3rem;
-      font-weight: 600;
-      margin-bottom: 1.2rem;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
     }
 
-    /* Footer */
+    /* ===== FOOTER VISIBLE ET ÉLÉGANT ===== */
     footer {
-      background: #0A0A0A;
-      padding: 3rem 6%;
-      text-align: center;
-      border-top: 1px solid rgba(198, 164, 63, 0.25);
+      background: var(--sora-black);
+      color: #E0E0E0;
+      padding: 3rem 6% 2rem;
+      border-top: 2px solid rgba(198, 164, 63, 0.3);
     }
 
-    .footer-logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: var(--gold);
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-col h4 {
+      color: var(--sora-gold);
+      font-size: 1.2rem;
       margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .footer-col p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #B0B0B0;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-col ul li a {
+      color: #B0B0B0;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 0.9rem;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--sora-gold);
     }
 
     .social-links {
       display: flex;
-      justify-content: center;
-      gap: 1.8rem;
-      margin: 1.5rem 0;
+      gap: 1.2rem;
+      margin-top: 1rem;
     }
 
     .social-links a {
-      color: white;
-      font-size: 1.2rem;
-      transition: var(--transition-smooth);
+      color: #B0B0B0;
+      font-size: 1.3rem;
+      transition: var(--sora-transition);
     }
 
     .social-links a:hover {
-      color: var(--gold);
-      transform: translateY(-4px);
+      color: var(--sora-gold);
+      transform: translateY(-3px);
     }
 
-    /* ===== ANIMATIONS REVEAL AU SCROLL ===== */
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.8rem;
+      color: #7A7A7A;
+    }
+
+    /* ===== ANIMATIONS REVEAL ===== */
     .reveal {
       opacity: 0;
-      transform: translateY(45px);
-      transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
-
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Délais progressifs pour les cartes */
-    .service-card.reveal.active {
-      transition-delay: 0.05s;
-    }
-
-    .stat-item.reveal.active {
-      transition-delay: 0.1s;
-    }
-
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(45px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* ===== RESPONSIVE ===== */
@@ -449,66 +427,25 @@
     }
 
     @media (max-width: 850px) {
-      .hero-content h1 {
-        font-size: 3rem;
-      }
-      .hero-content p {
-        font-size: 1rem;
-      }
-      .section-title {
-        font-size: 2.2rem;
-      }
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .cta-premium h2 {
-        font-size: 2rem;
-      }
-      .stats-section {
-        gap: 1.8rem;
-        padding: 3rem 6%;
-      }
-      .stat-item h2 {
-        font-size: 2.5rem;
-      }
-      .menu-btn {
-        display: block;
-      }
+      .hero-content h1 { font-size: 3rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .section-title { font-size: 2rem; }
+      .menu-btn { display: block; }
       nav {
+        display: none;
         position: absolute;
         top: 75px;
         left: 0;
         width: 100%;
-        background: rgba(10, 10, 10, 0.98);
+        background: rgba(10,10,10,0.98);
         backdrop-filter: blur(12px);
-        padding: 1.8rem;
-        border-radius: 0 0 28px 28px;
-        display: none;
-        box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.4);
+        padding: 1.5rem;
+        border-radius: 0 0 24px 24px;
       }
-      nav.active {
-        display: block;
-      }
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.4rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .btn-group {
-        flex-direction: column;
-        align-items: center;
-      }
-      .btn {
-        width: 80%;
-        justify-content: center;
-      }
-      .section {
-        padding: 4rem 5%;
-      }
+      nav.active { display: block; }
+      nav ul { flex-direction: column; align-items: center; gap: 1rem; }
+      .footer-container { grid-template-columns: 1fr; text-align: center; }
+      .social-links { justify-content: center; }
     }
   </style>
 </head>
@@ -531,9 +468,8 @@
 </header>
 
 <main>
-  <!-- Hero Section -->
   <section class="hero">
-    <img class="hero-bg" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=2000&q=85" alt="Événement de luxe SORA" loading="eager">
+    <img class="hero-bg" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=2000&q=80" alt="SORA événement luxe">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>SORA Agency</h1>
@@ -545,161 +481,120 @@
     </div>
   </section>
 
-  <!-- Section À propos -->
   <section class="section">
-    <h2 class="section-title reveal"><span>Notre signature</span> · Qui sommes-nous ?<div class="title-decoration"></div></h2>
+    <h2 class="section-title reveal"><span>Notre ADN</span> · L'excellence française<div class="title-decoration"></div></h2>
     <div class="about-grid">
-      <div class="about-img reveal">
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Équipe SORA professionnelle">
-      </div>
+      <div class="about-img reveal"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Équipe SORA"></div>
       <div class="about-text reveal">
-        <p><strong>SORA Agency</strong> est une maison d'excellence dédiée à l'accueil événementiel haut de gamme. Depuis notre création, nous accompagnons les plus grandes marques, institutions et organisateurs d'événements dans la valorisation de leur image.</p>
-        <p>Notre savoir-faire : hôtesses d'accueil polyglottes, accompagnement VIP, gestion d'expérience et brand activation. Chaque prestation SORA incarne le luxe silencieux et la précision opérationnelle.</p>
-        <p>Nous ne nous contentons pas de « recruter » : nous formons, stylisons et préparons nos talents pour qu'ils deviennent les ambassadeurs naturels de vos événements.</p>
+        <p><strong>SORA Agency</strong> est la référence française en matière d’accueil événementiel premium. Nous recrutons, formons et déployons des hôtesses et hôtes d’exception pour les plus belles manifestations.</p>
+        <p>Notre mission : transformer chaque rencontre en souvenir d’élégance, chaque geste en signature de luxe. Partenaires des institutions, marques internationales et organisateurs exigeants.</p>
       </div>
     </div>
   </section>
 
-  <!-- Section Services modernisée -->
-  <section class="section" style="background-color: #FFFFFF; border-radius: 48px 48px 0 0;">
-    <h2 class="section-title reveal"><span>Nos expertises</span> · Prestations sur mesure<div class="title-decoration"></div></h2>
+  <section class="section" style="background: white; border-radius: 40px 40px 0 0;">
+    <h2 class="section-title reveal"><span>Nos services</span> · Sur mesure<div class="title-decoration"></div></h2>
     <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-icon">🎯</div>
-        <h3>Accueil Événementiel</h3>
-        <p>Congrès, conférences, salons, soirées privées et cérémonies prestigieuses.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">👩‍💼</div>
-        <h3>Hôtesses Professionnelles</h3>
-        <p>Personnel qualifié, formé aux codes du luxe, pour représenter votre marque avec élégance.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">👑</div>
-        <h3>Accompagnement VIP</h3>
-        <p>Service white glove, gestion protocolaire et expérience personnalisée.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">📢</div>
-        <h3>Street Marketing & Activation</h3>
-        <p>Opérations terrain, sampling, animations éphémères pour un impact immédiat.</p>
-      </div>
+      <div class="service-card reveal"><div class="service-icon">🎯</div><h3>Accueil Événementiel</h3><p>Congrès, salons, lancements, cérémonies.</p></div>
+      <div class="service-card reveal"><div class="service-icon">👩‍💼</div><h3>Hôtesses d'excellence</h3><p>Professionnelles formées aux codes du luxe.</p></div>
+      <div class="service-card reveal"><div class="service-icon">👑</div><h3>Accompagnement VIP</h3><p>Service personnalisé pour vos invités prestige.</p></div>
+      <div class="service-card reveal"><div class="service-icon">📢</div><h3>Brand Activation</h3><p>Street marketing, sampling, expériences terrain.</p></div>
     </div>
   </section>
 
-  <!-- Statistiques animées -->
   <div class="stats-section">
-    <div class="stat-item reveal">
-      <h2 class="counter" data-target="248">0</h2>
-      <p>Événements réalisés</p>
-    </div>
-    <div class="stat-item reveal">
-      <h2 class="counter" data-target="612">0</h2>
-      <p>Clients satisfaits</p>
-    </div>
-    <div class="stat-item reveal">
-      <h2 class="counter" data-target="124">0</h2>
-      <p>Hôtesses & Hôtes</p>
-    </div>
-    <div class="stat-item reveal">
-      <h2 class="counter" data-target="12">0</h2>
-      <p>Années d'expérience</p>
-    </div>
+    <div class="stat-item reveal"><h2 class="counter" data-target="248">0</h2><p>Événements</p></div>
+    <div class="stat-item reveal"><h2 class="counter" data-target="612">0</h2><p>Clients</p></div>
+    <div class="stat-item reveal"><h2 class="counter" data-target="124">0</h2><p>Talents SORA</p></div>
+    <div class="stat-item reveal"><h2 class="counter" data-target="12">0</h2><p>Années d'excellence</p></div>
   </div>
 
-  <!-- CTA Premium -->
   <section class="cta-premium">
-    <h2 class="reveal">Prêt à confier votre image à une équipe d'excellence ?</h2>
-    <a href="quote.html" class="btn reveal" style="background: white; color: #0F0F0F;">📩 Obtenir un devis personnalisé</a>
+    <h2 class="reveal">Donnez à votre événement une signature d'exception</h2>
+    <a href="quote.html" class="btn reveal" style="background: var(--sora-gold); color: #0A0A0A;">📄 Obtenir un devis</a>
   </section>
 </main>
 
 <footer>
-  <div class="footer-logo">SORA</div>
-  <div class="social-links">
-    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
-    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>SORA Agency</h4>
+      <p>L'excellence de l'accueil événementiel. Élégance, professionnalisme et créativité au service de votre image.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-behance"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Liens rapides</h4>
+      <ul>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="jobs.html">Recrutement</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>📞 +33 (0)1 23 45 67 89</p>
+      <p>✉️ contact@sora-agency.fr</p>
+      <p>📍 Paris, France</p>
+    </div>
   </div>
-  <p>Accueil · Élégance · Professionnalisme</p>
-  <p style="color: #777; font-size: 0.85rem; margin-top: 1rem;">© 2026 SORA Agency — Tous droits réservés. Agence certifiée d'excellence.</p>
+  <div class="footer-bottom">
+    <p>© 2026 SORA Agency — Tous droits réservés. Agence d'accueil certifiée.</p>
+  </div>
 </footer>
 
-<!-- Font Awesome Icons (CDN) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 <script>
-  // Menu mobile
   function toggleMenu() {
-    const menu = document.getElementById('menu');
-    menu.classList.toggle('active');
+    document.getElementById('menu').classList.toggle('active');
   }
 
-  // Animation compteurs avec seuil d'intersection
   const counters = document.querySelectorAll('.counter');
-  let countersStarted = false;
-
+  let counted = false;
   const startCounters = () => {
-    if (countersStarted) return;
-    countersStarted = true;
+    if (counted) return;
+    counted = true;
     counters.forEach(counter => {
-      const target = parseInt(counter.getAttribute('data-target'), 10);
+      const target = +counter.dataset.target;
       let current = 0;
-      const increment = target / 55;
-      const updateCounter = () => {
+      const increment = target / 60;
+      const update = () => {
         current += increment;
         if (current < target) {
           counter.innerText = Math.ceil(current);
-          requestAnimationFrame(updateCounter);
+          requestAnimationFrame(update);
         } else {
           counter.innerText = target;
         }
       };
-      updateCounter();
+      update();
     });
   };
 
-  // Révélation au scroll
-  const revealElements = document.querySelectorAll('.reveal');
-  
-  const checkReveal = () => {
-    const windowHeight = window.innerHeight;
-    revealElements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < windowHeight - 90) {
-        el.classList.add('active');
-      }
+  const reveals = document.querySelectorAll('.reveal');
+  const checkScroll = () => {
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 80) el.classList.add('active');
     });
-    // Détection des statistiques pour lancer les compteurs
     const statsSection = document.querySelector('.stats-section');
-    if (statsSection) {
-      const statsRect = statsSection.getBoundingClientRect();
-      if (statsRect.top < window.innerHeight - 100 && statsRect.bottom > 0) {
-        startCounters();
-      }
-    }
+    if (statsSection && statsSection.getBoundingClientRect().top < window.innerHeight - 50) startCounters();
   };
 
-  // Header scroll effet
-  const header = document.querySelector('header');
+  window.addEventListener('scroll', checkScroll);
+  window.addEventListener('load', checkScroll);
+
+  let header = document.querySelector('header');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      header.style.background = "rgba(15, 15, 15, 0.97)";
+      header.style.background = "rgba(10,10,10,0.97)";
       header.style.padding = "0.9rem 6%";
     } else {
-      header.style.background = "rgba(15, 15, 15, 0.85)";
+      header.style.background = "rgba(10,10,10,0.92)";
       header.style.padding = "1.2rem 6%";
-    }
-    checkReveal();
-  });
-
-  // Initialisation au chargement
-  window.addEventListener('load', () => {
-    checkReveal();
-    // S'assurer que le compteur ne se lance que si la section est déjà visible
-    if (document.querySelector('.stats-section') && document.querySelector('.stats-section').getBoundingClientRect().top < window.innerHeight) {
-      startCounters();
     }
   });
 </script>
