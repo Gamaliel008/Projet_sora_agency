@@ -4,322 +4,63 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | SORA Agency</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-background:#f8f8f8;
-color:#222;
-}
-
-:root{
---gold:#d4af37;
---dark:#111;
---light:#fff;
-}
-
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:20px 8%;
-background:rgba(17,17,17,.95);
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:1000;
-transition:0.3s;
-}
-
-.logo{
-font-size:2rem;
-font-weight:700;
-color:var(--gold);
-}
-
-nav ul{
-display:flex;
-list-style:none;
-gap:25px;
-}
-
-nav a{
-text-decoration:none;
-color:white;
-font-weight:500;
-transition:.3s;
-}
-
-nav a:hover,
-nav a.active{
-color:var(--gold);
-}
-
-.hero{
-height:40vh;
-background:
-linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;
-background-position:center;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:white;
-margin-top:80px;
-}
-
-.hero h1{
-font-size:4rem;
-}
-
-.section{
-padding:80px 8%;
-}
-
-.section-title{
-font-size:2.5rem;
-text-align:center;
-margin-bottom:50px;
-}
-
-.contact-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-}
-
-.contact-info{
-background:white;
-padding:40px;
-border-radius:20px;
-box-shadow:0 10px 20px rgba(0,0,0,.08);
-}
-
-.contact-item{
-display:flex;
-align-items:center;
-gap:15px;
-margin-bottom:25px;
-}
-
-.contact-icon{
-font-size:2rem;
-}
-
-.contact-item h4{
-color:var(--gold);
-margin-bottom:5px;
-}
-
-.contact-form{
-background:white;
-padding:40px;
-border-radius:20px;
-box-shadow:0 10px 20px rgba(0,0,0,.08);
-}
-
-.form-group{
-margin-bottom:20px;
-}
-
-.form-group input,
-.form-group textarea{
-width:100%;
-padding:12px 15px;
-border:1px solid #ddd;
-border-radius:10px;
-font-size:1rem;
-}
-
-.btn-submit{
-background:var(--gold);
-color:black;
-padding:15px 35px;
-border:none;
-border-radius:50px;
-font-weight:600;
-cursor:pointer;
-width:100%;
-transition:.3s;
-}
-
-.btn-submit:hover{
-transform:translateY(-3px);
-}
-
-.map{
-margin-top:50px;
-border-radius:20px;
-overflow:hidden;
-}
-
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:40px;
-margin-top:50px;
-}
-
-.menu-btn{
-display:none;
-font-size:2rem;
-color:white;
-cursor:pointer;
-}
-
-@media(max-width:768px){
-.hero h1{
-font-size:2.5rem;
-}
-.menu-btn{
-display:block;
-}
-nav{
-display:none;
-position:absolute;
-top:80px;
-left:0;
-width:100%;
-background:#111;
-padding:20px;
-z-index:999;
-}
-nav.active{
-display:block;
-}
-nav ul{
-flex-direction:column;
-align-items:center;
-gap:15px;
-}
-.contact-grid{
-grid-template-columns:1fr;
-}
-header{
-padding:15px 8%;
-}
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#F8F8F6;color:#1E1E1E;font-family:'Inter',sans-serif;overflow-x:hidden;}
+:root{--gold:#C6A43F;--gold-dark:#A8882E;}
+h1,h2,.logo{font-family:'Playfair Display',serif;font-weight:600;}
+header{position:fixed;top:0;left:0;width:100%;padding:1.2rem 6%;background:rgba(10,10,10,.92);backdrop-filter:blur(14px);display:flex;justify-content:space-between;align-items:center;z-index:1000;transition:0.3s;border-bottom:1px solid rgba(198,164,63,.25);}
+.logo{font-size:2rem;background:linear-gradient(135deg,#E0C26A,#C6A43F);-webkit-background-clip:text;background-clip:text;color:transparent;}
+nav ul{display:flex;list-style:none;gap:2rem;}
+nav a{text-decoration:none;color:white;font-weight:500;transition:.3s;position:relative;}
+nav a::after{content:'';position:absolute;bottom:-6px;left:0;width:0%;height:2px;background:var(--gold);transition:0.3s;}
+nav a:hover::after,nav a.active::after{width:100%;}
+nav a:hover,nav a.active{color:var(--gold);}
+.hero{height:40vh;background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:white;margin-top:80px;}
+.hero h1{font-size:4rem;}
+.section{padding:5rem 6%;}
+.section-title{text-align:center;font-size:2.8rem;margin-bottom:2rem;}
+.section-title span{background:linear-gradient(120deg,var(--gold),var(--gold-dark));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.title-decoration{width:70px;height:3px;background:var(--gold);margin:0.6rem auto 0;border-radius:4px;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+.contact-info{background:white;padding:2rem;border-radius:28px;box-shadow:0 12px 25px rgba(0,0,0,.05);}
+.contact-item{display:flex;align-items:center;gap:1rem;margin-bottom:1.8rem;}
+.contact-icon{font-size:2rem;}
+.contact-item h4{color:var(--gold);margin-bottom:0.2rem;}
+.contact-form{background:white;padding:2rem;border-radius:28px;box-shadow:0 12px 25px rgba(0,0,0,.05);}
+.form-group{margin-bottom:1.2rem;}
+.form-group input,.form-group textarea{width:100%;padding:0.9rem;border:1px solid #DDD;border-radius:16px;font-size:1rem;}
+.btn-submit{background:var(--gold);color:#0A0A0A;padding:1rem;border:none;border-radius:60px;font-weight:600;cursor:pointer;width:100%;transition:0.3s;}
+.btn-submit:hover{transform:translateY(-3px);background:#E0C26A;}
+.map{margin-top:3rem;border-radius:28px;overflow:hidden;}
+footer{background:#0A0A0A;color:#E0E0E0;padding:3rem 6% 2rem;border-top:2px solid rgba(198,164,63,.3);}
+.footer-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-bottom:2rem;}
+.footer-col h4{color:var(--gold);font-size:1.2rem;margin-bottom:1rem;font-family:'Playfair Display',serif;}
+.footer-col p,.footer-col ul li a{font-size:0.9rem;color:#B0B0B0;text-decoration:none;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:0.6rem;}
+.footer-col ul li a:hover{color:var(--gold);}
+.social-links{display:flex;gap:1.2rem;margin-top:1rem;}
+.social-links a{color:#B0B0B0;font-size:1.3rem;transition:0.3s;}
+.social-links a:hover{color:var(--gold);transform:translateY(-3px);}
+.footer-bottom{text-align:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);font-size:0.8rem;color:#7A7A7A;}
+.menu-btn{display:none;font-size:1.8rem;color:white;cursor:pointer;}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease;}
+.reveal.active{opacity:1;transform:translateY(0);}
+@media(max-width:850px){.hero h1{font-size:2.5rem;}.section-title{font-size:2rem;}.contact-grid{grid-template-columns:1fr;}.menu-btn{display:block;}nav{display:none;position:absolute;top:75px;left:0;width:100%;background:rgba(10,10,10,.98);backdrop-filter:blur(12px);padding:1.5rem;border-radius:0 0 24px 24px;}nav.active{display:block;}nav ul{flex-direction:column;align-items:center;gap:1rem;}.footer-container{grid-template-columns:1fr;text-align:center;}.social-links{justify-content:center;}}
 </style>
 </head>
 <body>
-
-<header>
-<div class="logo">SORA</div>
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-<nav id="menu">
-<ul>
-<li><a href="index.html">Accueil</a></li>
-<li><a href="about.html">À propos</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="gallery.html">Réalisations</a></li>
-<li><a href="quote.html">Devis</a></li>
-<li><a href="recruitment.html">Recrutement</a></li>
-<li><a href="#" class="active">Contact</a></li>
-</ul>
-</nav>
-</header>
-
-<section class="hero">
-<h1>Contactez-nous</h1>
-</section>
-
-<section class="section">
-<h2 class="section-title">Parlons de votre projet</h2>
-<div class="contact-grid">
-<div class="contact-info">
-<div class="contact-item">
-<div class="contact-icon">📍</div>
-<div>
-<h4>Adresse</h4>
-<p>12 avenue des Champs-Élysées<br>75008 Paris, France</p>
-</div>
-</div>
-<div class="contact-item">
-<div class="contact-icon">📞</div>
-<div>
-<h4>Téléphone</h4>
-<p>+33 (0)1 23 45 67 89</p>
-</div>
-</div>
-<div class="contact-item">
-<div class="contact-icon">✉️</div>
-<div>
-<h4>Email</h4>
-<p>contact@sora-agency.fr</p>
-</div>
-</div>
-<div class="contact-item">
-<div class="contact-icon">⏰</div>
-<div>
-<h4>Horaires</h4>
-<p>Lun - Ven : 9h - 19h<br>Sur rendez-vous le week-end</p>
-</div>
-</div>
-</div>
-<div class="contact-form">
-<form id="contactForm">
-<div class="form-group">
-<input type="text" placeholder="Nom complet *" required>
-</div>
-<div class="form-group">
-<input type="email" placeholder="Email *" required>
-</div>
-<div class="form-group">
-<input type="tel" placeholder="Téléphone">
-</div>
-<div class="form-group">
-<textarea rows="5" placeholder="Votre message *" required></textarea>
-</div>
-<button type="submit" class="btn-submit">Envoyer le message</button>
-</form>
-<div id="contactResponse" style="margin-top:15px;text-align:center;color:green;"></div>
-</div>
-</div>
-<div class="map">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.292292615674371!3d48.87377430791277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fecf4d4e4d5%3A0x9e8e2b5b7c3a6e4!2sChamps-%C3%89lys%C3%A9es%2C%20Paris!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</div>
-</section>
-
-<footer>
-<h3>SORA Agency</h3>
-<p>Accueil • Élégance • Professionnalisme</p>
-<p>© 2026 SORA Agency - Tous droits réservés.</p>
-</footer>
-
-<script>
-function toggleMenu(){
-document.getElementById('menu').classList.toggle('active');
-}
-window.addEventListener('scroll', () => {
-const header = document.querySelector('header');
-if(window.scrollY > 50){
-header.style.background = "rgba(17,17,17,.98)";
-header.style.padding = "15px 8%";
-} else {
-header.style.background = "rgba(17,17,17,.95)";
-header.style.padding = "20px 8%";
-}
-});
-document.getElementById('contactForm').addEventListener('submit', function(e){
-e.preventDefault();
-document.getElementById('contactResponse').innerHTML = "✅ Message envoyé ! Nous vous répondrons sous 48h.";
-this.reset();
-});
-</script>
+<header><div class="logo">SORA</div><div class="menu-btn" onclick="toggleMenu()">☰</div><nav id="menu"><ul><li><a href="index.html">Accueil</a></li><li><a href="about.html">À propos</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Réalisations</a></li><li><a href="quote.html">Devis</a></li><li><a href="jobs.html">Recrutement</a></li><li><a href="contact.html" class="active">Contact</a></li></ul></nav></header>
+<section class="hero"><h1>Contactez-nous</h1></section>
+<section class="section"><h2 class="section-title reveal"><span>Parlons de votre projet</span><div class="title-decoration"></div></h2><div class="contact-grid"><div class="contact-info reveal"><div class="contact-item"><div class="contact-icon">📍</div><div><h4>Adresse</h4><p>12 avenue des Champs-Élysées<br>75008 Paris, France</p></div></div><div class="contact-item"><div class="contact-icon">📞</div><div><h4>Téléphone</h4><p>+33 (0)1 23 45 67 89</p></div></div><div class="contact-item"><div class="contact-icon">✉️</div><div><h4>Email</h4><p>contact@sora-agency.fr</p></div></div><div class="contact-item"><div class="contact-icon">⏰</div><div><h4>Horaires</h4><p>Lun - Ven : 9h - 19h<br>Sur rendez-vous le week-end</p></div></div></div><div class="contact-form reveal"><form id="contactForm"><div class="form-group"><input type="text" placeholder="Nom complet *" required></div><div class="form-group"><input type="email" placeholder="Email *" required></div><div class="form-group"><input type="tel" placeholder="Téléphone"></div><div class="form-group"><textarea rows="5" placeholder="Votre message *" required></textarea></div><button type="submit" class="btn-submit">Envoyer le message</button></form><div id="contactResponse" style="margin-top:1rem;text-align:center;color:green;"></div></div></div><div class="map reveal"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.292292615674371!3d48.87377430791277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fecf4d4e4d5%3A0x9e8e2b5b7c3a6e4!2sChamps-%C3%89lys%C3%A9es%2C%20Paris!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div></section>
+<footer><div class="footer-container"><div class="footer-col"><h4>SORA Agency</h4><p>L'excellence de l'accueil événementiel.</p><div class="social-links"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-behance"></i></a></div></div><div class="footer-col"><h4>Liens rapides</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="services.html">Services</a></li><li><a href="jobs.html">Recrutement</a></li><li><a href="about.html">À propos</a></li></ul></div><div class="footer-col"><h4>Contact</h4><p>📞 +33 (0)1 23 45 67 89</p><p>✉️ contact@sora-agency.fr</p><p>📍 Paris, France</p></div></div><div class="footer-bottom"><p>© 2026 SORA Agency — Tous droits réservés.</p></div></footer>
+<script>function toggleMenu(){document.getElementById('menu').classList.toggle('active');}
+const reveals=document.querySelectorAll('.reveal');const checkScroll=()=>{reveals.forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight-80)el.classList.add('active');});};window.addEventListener('scroll',checkScroll);window.addEventListener('load',checkScroll);
+let header=document.querySelector('header');window.addEventListener('scroll',()=>{if(window.scrollY>50){header.style.background="rgba(10,10,10,.97)";header.style.padding="0.9rem 6%";}else{header.style.background="rgba(10,10,10,.92)";header.style.padding="1.2rem 6%";}});
+document.getElementById('contactForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('contactResponse').innerHTML="✅ Message envoyé ! Nous vous répondrons sous 48h.";this.reset();});</script>
 </body>
 </html>
