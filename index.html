@@ -1,500 +1,707 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>SORA Agency | Agence d'Accueil Événementiel</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="SORA Agency : agence d'accueil événementiel haut de gamme. Hôtesses professionnelles, accompagnement VIP et marketing expérientiel pour valoriser votre image.">
+  <meta name="theme-color" content="#C6A43F">
+  <title>SORA Agency | Accueil événementiel d'excellence</title>
+  
+  <!-- Google Fonts optimisé avec variable + fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ===== RESET & VARIABLES MODERNES ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    :root {
+      --gold: #C6A43F;
+      --gold-dark: #A8882E;
+      --gold-light: #E0C26A;
+      --dark-bg: #0F0F0F;
+      --dark-card: #141414;
+      --gray-bg: #F9F9F6;
+      --text-dark: #1A1A1A;
+      --text-gray: #4A4A4A;
+      --text-light: #FFFFFF;
+      --shadow-sm: 0 12px 30px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 25px 40px -12px rgba(0, 0, 0, 0.2);
+      --transition-smooth: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --border-radius-card: 28px;
+      --border-radius-btn: 60px;
+    }
 
-<style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      background-color: var(--gray-bg);
+      color: var(--text-dark);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
+    h1, h2, h3, .logo {
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
 
-body{
-background:#f8f8f8;
-color:#222;
-}
+    /* ===== HEADER GLASS ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.2rem 6%;
+      background: rgba(15, 15, 15, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      transition: var(--transition-smooth);
+      border-bottom: 1px solid rgba(198, 164, 63, 0.2);
+    }
 
-:root{
---gold:#d4af37;
---dark:#111;
---light:#fff;
-}
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.02em;
+    }
 
-/* HEADER */
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:20px 8%;
-background:rgba(17,17,17,.95);
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:1000;
-transition:0.3s;
-}
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
 
-.logo{
-font-size:2rem;
-font-weight:700;
-color:var(--gold);
-}
+    nav a {
+      text-decoration: none;
+      color: var(--text-light);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+      position: relative;
+      padding-bottom: 0.25rem;
+    }
 
-nav ul{
-display:flex;
-list-style:none;
-gap:25px;
-}
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
 
-nav a{
-text-decoration:none;
-color:white;
-font-weight:500;
-transition:.3s;
-}
+    nav a:hover::after {
+      width: 100%;
+    }
 
-nav a:hover{
-color:var(--gold);
-}
+    nav a:hover {
+      color: var(--gold-light);
+    }
 
-/* HERO */
-.hero{
-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-url('https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:20px;
-}
+    /* ===== HERO SECTION ===== */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
 
-.hero-content{
-max-width:850px;
-color:white;
-animation: fadeInUp 1s ease-out;
-}
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: brightness(0.55);
+      transition: transform 12s ease;
+    }
 
-.hero h1{
-font-size:4rem;
-margin-bottom:20px;
-}
+    .hero:hover .hero-bg {
+      transform: scale(1.05);
+    }
 
-.hero p{
-font-size:1.2rem;
-line-height:1.8;
-margin-bottom:30px;
-}
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 20%, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.75));
+      z-index: 1;
+    }
 
-.btn{
-display:inline-block;
-padding:15px 35px;
-background:var(--gold);
-color:black;
-text-decoration:none;
-font-weight:600;
-border-radius:50px;
-transition:.3s;
-}
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 880px;
+      padding: 0 1.5rem;
+      animation: fadeInUp 1.1s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+    }
 
-.btn:hover{
-transform:translateY(-3px);
-}
+    .hero-content h1 {
+      font-size: 4.8rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+      line-height: 1.2;
+    }
 
-/* SECTIONS */
-.section{
-padding:100px 8%;
-}
+    .hero-content p {
+      font-size: 1.3rem;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 2rem;
+      font-weight: 400;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-.section-title{
-text-align:center;
-font-size:2.5rem;
-margin-bottom:50px;
-color:var(--dark);
-}
+    .btn-group {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-.about{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
-}
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.9rem 2.2rem;
+      background: var(--gold);
+      color: #0F0F0F;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: var(--border-radius-btn);
+      transition: var(--transition-smooth);
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      border: none;
+      cursor: pointer;
+    }
 
-.about img{
-width:100%;
-border-radius:20px;
-}
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--gold);
+      color: white;
+    }
 
-.about-text p{
-line-height:2;
-}
+    .btn-outline:hover {
+      background: var(--gold);
+      color: #0F0F0F;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 22px -10px rgba(198, 164, 63, 0.5);
+    }
 
-/* SERVICES */
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 25px -10px rgba(198, 164, 63, 0.45);
+      background: var(--gold-light);
+    }
 
-.card{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-transition:.3s;
-}
+    /* ===== SECTIONS GÉNÉRALES ===== */
+    .section {
+      padding: 6rem 6%;
+    }
 
-.card:hover{
-transform:translateY(-10px);
-}
+    .section-title {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 3rem;
+      font-weight: 600;
+      position: relative;
+    }
 
-.card h3{
-color:var(--gold);
-margin-bottom:15px;
-}
+    .section-title span {
+      background: linear-gradient(120deg, var(--gold), var(--gold-dark));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
 
-/* STATS */
-.stats{
-background:var(--dark);
-color:white;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-padding:80px 8%;
-text-align:center;
-}
+    .title-decoration {
+      width: 70px;
+      height: 3px;
+      background: var(--gold);
+      margin: 0.8rem auto 0;
+      border-radius: 4px;
+    }
 
-.stat h2{
-font-size:3rem;
-color:var(--gold);
-}
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
 
-/* CTA */
-.cta{
-background:var(--gold);
-padding:100px 8%;
-text-align:center;
-}
+    .about-img img {
+      width: 100%;
+      border-radius: 32px;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-smooth);
+    }
 
-.cta h2{
-font-size:2.5rem;
-margin-bottom:20px;
-}
+    .about-img img:hover {
+      transform: scale(1.02);
+    }
 
-/* FOOTER */
-footer{
-background:#111;
-color:white;
-padding:50px 8%;
-text-align:center;
-}
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-gray);
+      margin-bottom: 1rem;
+    }
 
-footer p{
-margin-top:10px;
-}
+    /* Services cartes modernes */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
 
-/* MOBILE */
-.menu-btn{
-display:none;
-font-size:2rem;
-color:white;
-cursor:pointer;
-}
+    .service-card {
+      background: white;
+      padding: 2rem 1.8rem;
+      border-radius: var(--border-radius-card);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      text-align: center;
+      border: 1px solid rgba(0, 0, 0, 0.02);
+    }
 
-/* ========== ANIMATIONS AU SCROLL ========== */
-.reveal{
-opacity: 0;
-transform: translateY(40px);
-transition: opacity 0.8s ease, transform 0.8s ease;
-}
+    .service-card:hover {
+      transform: translateY(-12px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(198, 164, 63, 0.2);
+    }
 
-.reveal.active{
-opacity: 1;
-transform: translateY(0);
-}
+    .service-icon {
+      font-size: 2.8rem;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
 
-/* Animation pour les cartes (délais progressifs) */
-.card.reveal.active,
-.service-card.reveal.active,
-.stat.reveal.active{
-animation: fadeInUp 0.6s ease forwards;
-}
+    .service-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      font-family: 'Playfair Display', serif;
+    }
 
-/* Animation hero */
-@keyframes fadeInUp{
-from{
-opacity: 0;
-transform: translateY(40px);
-}
-to{
-opacity: 1;
-transform: translateY(0);
-}
-}
+    .service-card p {
+      color: var(--text-gray);
+      line-height: 1.5;
+    }
 
-@media(max-width:768px){
+    /* Stats section avec animation counters */
+    .stats-section {
+      background: linear-gradient(115deg, #121212 0%, #1E1E1E 100%);
+      padding: 5rem 6%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
+      text-align: center;
+    }
 
-.hero h1{
-font-size:2.5rem;
-}
+    .stat-item h2 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -1px;
+    }
 
-.about{
-grid-template-columns:1fr;
-}
+    .stat-item p {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+      color: #CCCCCC;
+    }
 
-nav{
-display:none;
-position:absolute;
-top:80px;
-left:0;
-width:100%;
-background:#111;
-padding:20px;
-}
+    /* CTA Premium */
+    .cta-premium {
+      background: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80') center/cover fixed;
+      position: relative;
+      padding: 7rem 6%;
+      text-align: center;
+      color: white;
+    }
 
-nav.active{
-display:block;
-}
+    .cta-premium::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+    }
 
-nav ul{
-flex-direction:column;
-}
+    .cta-premium > * {
+      position: relative;
+      z-index: 2;
+    }
 
-.menu-btn{
-display:block;
-}
+    .cta-premium h2 {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
 
-.section-title{
-font-size:2rem;
-}
+    /* Footer */
+    footer {
+      background: #0A0A0A;
+      padding: 3rem 6%;
+      text-align: center;
+      border-top: 1px solid rgba(198, 164, 63, 0.25);
+    }
 
-.stat h2{
-font-size:2rem;
-}
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
 
-.cta h2{
-font-size:1.8rem;
-}
-}
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      margin: 1.5rem 0;
+    }
 
-</style>
+    .social-links a {
+      color: white;
+      font-size: 1.2rem;
+      transition: var(--transition-smooth);
+    }
+
+    .social-links a:hover {
+      color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    /* ===== ANIMATIONS REVEAL AU SCROLL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(45px);
+      transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Délais progressifs pour les cartes */
+    .service-card.reveal.active {
+      transition-delay: 0.05s;
+    }
+
+    .stat-item.reveal.active {
+      transition-delay: 0.1s;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(45px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    .menu-btn {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 850px) {
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .section-title {
+        font-size: 2.2rem;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .cta-premium h2 {
+        font-size: 2rem;
+      }
+      .stats-section {
+        gap: 1.8rem;
+        padding: 3rem 6%;
+      }
+      .stat-item h2 {
+        font-size: 2.5rem;
+      }
+      .menu-btn {
+        display: block;
+      }
+      nav {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(12px);
+        padding: 1.8rem;
+        border-radius: 0 0 28px 28px;
+        display: none;
+        box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.4);
+      }
+      nav.active {
+        display: block;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.4rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .btn-group {
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn {
+        width: 80%;
+        justify-content: center;
+      }
+      .section {
+        padding: 4rem 5%;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-
-<div class="logo">SORA</div>
-
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-
-<nav id="menu">
-<ul>
-<li><a href="#">Accueil</a></li>
-<li><a href="about.html">À propos</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="gallery.html">Réalisations</a></li>
-<li><a href="quote.html">Devis</a></li>
-<li><a href="jobs.html">Recrutement</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-
+  <div class="logo">SORA</div>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <nav id="menu">
+    <ul>
+      <li><a href="#" class="active">Accueil</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Réalisations</a></li>
+      <li><a href="quote.html">Devis</a></li>
+      <li><a href="jobs.html">Recrutement</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<section class="hero">
+<main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <img class="hero-bg" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=2000&q=85" alt="Événement de luxe SORA" loading="eager">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>SORA Agency</h1>
+      <p>L'élégance, la courtoisie et le professionnalisme au service de votre image.</p>
+      <div class="btn-group">
+        <a href="quote.html" class="btn">✨ Demander un devis</a>
+        <a href="about.html" class="btn-outline btn">Découvrir l'agence</a>
+      </div>
+    </div>
+  </section>
 
-<div class="hero-content">
+  <!-- Section À propos -->
+  <section class="section">
+    <h2 class="section-title reveal"><span>Notre signature</span> · Qui sommes-nous ?<div class="title-decoration"></div></h2>
+    <div class="about-grid">
+      <div class="about-img reveal">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Équipe SORA professionnelle">
+      </div>
+      <div class="about-text reveal">
+        <p><strong>SORA Agency</strong> est une maison d'excellence dédiée à l'accueil événementiel haut de gamme. Depuis notre création, nous accompagnons les plus grandes marques, institutions et organisateurs d'événements dans la valorisation de leur image.</p>
+        <p>Notre savoir-faire : hôtesses d'accueil polyglottes, accompagnement VIP, gestion d'expérience et brand activation. Chaque prestation SORA incarne le luxe silencieux et la précision opérationnelle.</p>
+        <p>Nous ne nous contentons pas de « recruter » : nous formons, stylisons et préparons nos talents pour qu'ils deviennent les ambassadeurs naturels de vos événements.</p>
+      </div>
+    </div>
+  </section>
 
-<h1>SORA Agency</h1>
+  <!-- Section Services modernisée -->
+  <section class="section" style="background-color: #FFFFFF; border-radius: 48px 48px 0 0;">
+    <h2 class="section-title reveal"><span>Nos expertises</span> · Prestations sur mesure<div class="title-decoration"></div></h2>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🎯</div>
+        <h3>Accueil Événementiel</h3>
+        <p>Congrès, conférences, salons, soirées privées et cérémonies prestigieuses.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">👩‍💼</div>
+        <h3>Hôtesses Professionnelles</h3>
+        <p>Personnel qualifié, formé aux codes du luxe, pour représenter votre marque avec élégance.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">👑</div>
+        <h3>Accompagnement VIP</h3>
+        <p>Service white glove, gestion protocolaire et expérience personnalisée.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">📢</div>
+        <h3>Street Marketing & Activation</h3>
+        <p>Opérations terrain, sampling, animations éphémères pour un impact immédiat.</p>
+      </div>
+    </div>
+  </section>
 
-<p>
-L'élégance, la courtoisie et le professionnalisme
-au service de votre image.
-</p>
+  <!-- Statistiques animées -->
+  <div class="stats-section">
+    <div class="stat-item reveal">
+      <h2 class="counter" data-target="248">0</h2>
+      <p>Événements réalisés</p>
+    </div>
+    <div class="stat-item reveal">
+      <h2 class="counter" data-target="612">0</h2>
+      <p>Clients satisfaits</p>
+    </div>
+    <div class="stat-item reveal">
+      <h2 class="counter" data-target="124">0</h2>
+      <p>Hôtesses & Hôtes</p>
+    </div>
+    <div class="stat-item reveal">
+      <h2 class="counter" data-target="12">0</h2>
+      <p>Années d'expérience</p>
+    </div>
+  </div>
 
-<a href="quote.html" class="btn">
-Demander un devis
-</a>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="section-title reveal">Qui sommes-nous ?</h2>
-
-<div class="about">
-
-<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" class="reveal">
-
-<div class="about-text reveal">
-
-<p>
-SORA est une agence spécialisée dans l'accueil
-événementiel, la gestion des hôtesses d'accueil,
-l'accompagnement VIP et les opérations promotionnelles.
-Notre mission est d'offrir une expérience mémorable
-à vos invités tout en valorisant l'image de votre organisation.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="section-title reveal">Nos Services</h2>
-
-<div class="services">
-
-<div class="card reveal">
-<h3>Accueil Événementiel</h3>
-<p>Congrès, conférences, salons, cérémonies et événements privés.</p>
-</div>
-
-<div class="card reveal">
-<h3>Hôtesses Professionnelles</h3>
-<p>Personnel qualifié pour représenter votre image avec élégance.</p>
-</div>
-
-<div class="card reveal">
-<h3>Accompagnement VIP</h3>
-<p>Prise en charge personnalisée de vos invités de marque.</p>
-</div>
-
-<div class="card reveal">
-<h3>Street Marketing</h3>
-<p>Promotion de produits et services sur le terrain.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="stats">
-
-<div class="stat reveal">
-<h2 class="counter" data-target="150">0</h2>
-<p>Événements</p>
-</div>
-
-<div class="stat reveal">
-<h2 class="counter" data-target="500">0</h2>
-<p>Clients satisfaits</p>
-</div>
-
-<div class="stat reveal">
-<h2 class="counter" data-target="50">0</h2>
-<p>Hôtesses</p>
-</div>
-
-<div class="stat reveal">
-<h2 class="counter" data-target="8">0</h2>
-<p>Années d'expérience</p>
-</div>
-
-</section>
-
-<section class="cta">
-
-<h2 class="reveal">
-Prêt à confier votre image à une équipe d'excellence ?
-</h2>
-
-<br>
-
-<a href="quote.html" class="btn reveal">
-Obtenir un devis
-</a>
-
-</section>
+  <!-- CTA Premium -->
+  <section class="cta-premium">
+    <h2 class="reveal">Prêt à confier votre image à une équipe d'excellence ?</h2>
+    <a href="quote.html" class="btn reveal" style="background: white; color: #0F0F0F;">📩 Obtenir un devis personnalisé</a>
+  </section>
+</main>
 
 <footer>
-
-<h3>SORA Agency</h3>
-
-<p>
-Accueil • Élégance • Professionnalisme
-</p>
-
-<p>
-© 2026 SORA Agency. Tous droits réservés.
-</p>
-
+  <div class="footer-logo">SORA</div>
+  <div class="social-links">
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+  <p>Accueil · Élégance · Professionnalisme</p>
+  <p style="color: #777; font-size: 0.85rem; margin-top: 1rem;">© 2026 SORA Agency — Tous droits réservés. Agence certifiée d'excellence.</p>
 </footer>
 
+<!-- Font Awesome Icons (CDN) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <script>
+  // Menu mobile
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('active');
+  }
 
-// Menu mobile toggle
-function toggleMenu(){
-document.getElementById('menu').classList.toggle('active');
-}
+  // Animation compteurs avec seuil d'intersection
+  const counters = document.querySelectorAll('.counter');
+  let countersStarted = false;
 
-// Compteurs animés
-const counters=document.querySelectorAll('.counter');
+  const startCounters = () => {
+    if (countersStarted) return;
+    countersStarted = true;
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target'), 10);
+      let current = 0;
+      const increment = target / 55;
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          counter.innerText = Math.ceil(current);
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCounter();
+    });
+  };
 
-counters.forEach(counter=>{
-const updateCounter=()=>{
-const target=+counter.getAttribute('data-target');
-const count=+counter.innerText;
-const increment=target/100;
-if(count<target){
-counter.innerText=Math.ceil(count+increment);
-setTimeout(updateCounter,20);
-}else{
-counter.innerText=target;
-}
-};
-updateCounter();
-});
+  // Révélation au scroll
+  const revealElements = document.querySelectorAll('.reveal');
+  
+  const checkReveal = () => {
+    const windowHeight = window.innerHeight;
+    revealElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < windowHeight - 90) {
+        el.classList.add('active');
+      }
+    });
+    // Détection des statistiques pour lancer les compteurs
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+      const statsRect = statsSection.getBoundingClientRect();
+      if (statsRect.top < window.innerHeight - 100 && statsRect.bottom > 0) {
+        startCounters();
+      }
+    }
+  };
 
-// ========== ANIMATION AU SCROLL ==========
-const revealElements = document.querySelectorAll('.reveal');
+  // Header scroll effet
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.style.background = "rgba(15, 15, 15, 0.97)";
+      header.style.padding = "0.9rem 6%";
+    } else {
+      header.style.background = "rgba(15, 15, 15, 0.85)";
+      header.style.padding = "1.2rem 6%";
+    }
+    checkReveal();
+  });
 
-const revealOnScroll = () => {
-revealElements.forEach(element => {
-const elementTop = element.getBoundingClientRect().top;
-const windowHeight = window.innerHeight;
-if(elementTop < windowHeight - 80){
-element.classList.add('active');
-}
-});
-};
-
-// Animation au chargement
-window.addEventListener('load', revealOnScroll);
-// Animation au scroll
-window.addEventListener('scroll', revealOnScroll);
-
-// Effet header au scroll
-window.addEventListener('scroll', () => {
-const header = document.querySelector('header');
-if(window.scrollY > 50){
-header.style.background = "rgba(17,17,17,.98)";
-header.style.padding = "15px 8%";
-} else {
-header.style.background = "rgba(17,17,17,.95)";
-header.style.padding = "20px 8%";
-}
-});
-
+  // Initialisation au chargement
+  window.addEventListener('load', () => {
+    checkReveal();
+    // S'assurer que le compteur ne se lance que si la section est déjà visible
+    if (document.querySelector('.stats-section') && document.querySelector('.stats-section').getBoundingClientRect().top < window.innerHeight) {
+      startCounters();
+    }
+  });
 </script>
-
 </body>
 </html>
