@@ -3,90 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Recrutement | SORA Agency</title>
+<title>Devis | SORA Agency</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
-body{background:#f8f8f8;color:#222;}
-:root{--gold:#d4af37;--dark:#111;--light:#fff;}
-header{position:fixed;top:0;left:0;width:100%;padding:20px 8%;background:rgba(17,17,17,.95);display:flex;justify-content:space-between;align-items:center;z-index:1000;transition:0.3s;}
-.logo{font-size:2rem;font-weight:700;color:var(--gold);}
-nav ul{display:flex;list-style:none;gap:25px;}
-nav a{text-decoration:none;color:white;font-weight:500;transition:.3s;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#F8F8F6;color:#1E1E1E;font-family:'Inter',sans-serif;overflow-x:hidden;}
+:root{--gold:#C6A43F;--gold-dark:#A8882E;}
+h1,h2,.logo{font-family:'Playfair Display',serif;font-weight:600;}
+header{position:fixed;top:0;left:0;width:100%;padding:1.2rem 6%;background:rgba(10,10,10,.92);backdrop-filter:blur(14px);display:flex;justify-content:space-between;align-items:center;z-index:1000;transition:0.3s;border-bottom:1px solid rgba(198,164,63,.25);}
+.logo{font-size:2rem;background:linear-gradient(135deg,#E0C26A,#C6A43F);-webkit-background-clip:text;background-clip:text;color:transparent;}
+nav ul{display:flex;list-style:none;gap:2rem;}
+nav a{text-decoration:none;color:white;font-weight:500;transition:.3s;position:relative;}
+nav a::after{content:'';position:absolute;bottom:-6px;left:0;width:0%;height:2px;background:var(--gold);transition:0.3s;}
+nav a:hover::after,nav a.active::after{width:100%;}
 nav a:hover,nav a.active{color:var(--gold);}
-.hero{height:50vh;background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;display:flex;justify-content:center;align-items:center;text-align:center;color:white;margin-top:80px;}
+.hero{height:40vh;background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:white;margin-top:80px;}
 .hero h1{font-size:4rem;}
-.section{padding:80px 8%;}
-.section-title{font-size:2.5rem;text-align:center;margin-bottom:50px;}
-.recruitment-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
-.info-box{background:white;padding:30px;border-radius:20px;box-shadow:0 10px 20px rgba(0,0,0,.08);}
-.info-box h3{color:var(--gold);margin-bottom:15px;}
-.info-box ul{margin-left:20px;line-height:1.8;}
-.form-box{background:white;padding:30px;border-radius:20px;box-shadow:0 10px 20px rgba(0,0,0,.08);}
-.form-group{margin-bottom:20px;}
-.form-group label{display:block;margin-bottom:8px;font-weight:500;}
-.form-group input,.form-group textarea{width:100%;padding:12px 15px;border:1px solid #ddd;border-radius:10px;font-size:1rem;}
-.btn-submit{background:var(--gold);color:black;padding:12px 30px;border:none;border-radius:50px;font-weight:600;cursor:pointer;transition:.3s;width:100%;font-size:1rem;}
-.btn-submit:hover{transform:translateY(-3px);background:#c3a030;}
-footer{background:#111;color:white;text-align:center;padding:40px;margin-top:50px;}
-.menu-btn{display:none;font-size:2rem;color:white;cursor:pointer;}
-@media(max-width:768px){
-.hero h1{font-size:2.5rem;}
-.menu-btn{display:block;}
-nav{display:none;position:absolute;top:80px;left:0;width:100%;background:#111;padding:20px;z-index:999;}
-nav.active{display:block;}
-nav ul{flex-direction:column;align-items:center;gap:15px;}
-.recruitment-grid{grid-template-columns:1fr;}
-header{padding:15px 8%;}
-}
+.section{padding:4rem 6%;}
+.section-title{text-align:center;font-size:2.8rem;margin-bottom:2rem;}
+.section-title span{background:linear-gradient(120deg,var(--gold),var(--gold-dark));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.title-decoration{width:70px;height:3px;background:var(--gold);margin:0.6rem auto 0;border-radius:4px;}
+.form-container{max-width:800px;margin:0 auto;background:white;padding:2.5rem;border-radius:28px;box-shadow:0 20px 35px -12px rgba(0,0,0,.1);}
+.form-group{margin-bottom:1.5rem;}
+.form-group label{display:block;margin-bottom:0.5rem;font-weight:500;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:0.9rem 1rem;border:1px solid #DDD;border-radius:16px;font-size:1rem;transition:0.3s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold);}
+.btn-submit{background:var(--gold);color:#0A0A0A;padding:1rem;border:none;border-radius:60px;font-weight:600;cursor:pointer;width:100%;font-size:1rem;transition:0.3s;}
+.btn-submit:hover{transform:translateY(-3px);background:#E0C26A;}
+footer{background:#0A0A0A;color:#E0E0E0;padding:3rem 6% 2rem;border-top:2px solid rgba(198,164,63,.3);}
+.footer-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-bottom:2rem;}
+.footer-col h4{color:var(--gold);font-size:1.2rem;margin-bottom:1rem;font-family:'Playfair Display',serif;}
+.footer-col p,.footer-col ul li a{font-size:0.9rem;color:#B0B0B0;text-decoration:none;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:0.6rem;}
+.footer-col ul li a:hover{color:var(--gold);}
+.social-links{display:flex;gap:1.2rem;margin-top:1rem;}
+.social-links a{color:#B0B0B0;font-size:1.3rem;transition:0.3s;}
+.social-links a:hover{color:var(--gold);transform:translateY(-3px);}
+.footer-bottom{text-align:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);font-size:0.8rem;color:#7A7A7A;}
+.menu-btn{display:none;font-size:1.8rem;color:white;cursor:pointer;}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease;}
+.reveal.active{opacity:1;transform:translateY(0);}
+@media(max-width:850px){.hero h1{font-size:2.5rem;}.section-title{font-size:2rem;}.menu-btn{display:block;}nav{display:none;position:absolute;top:75px;left:0;width:100%;background:rgba(10,10,10,.98);backdrop-filter:blur(12px);padding:1.5rem;border-radius:0 0 24px 24px;}nav.active{display:block;}nav ul{flex-direction:column;align-items:center;gap:1rem;}.footer-container{grid-template-columns:1fr;text-align:center;}.social-links{justify-content:center;}}
 </style>
 </head>
 <body>
-<header>
-<div class="logo">SORA</div>
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-<nav id="menu">
-<ul>
-<li><a href="index.html">Accueil</a></li>
-<li><a href="about.html">À propos</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="gallery.html">Réalisations</a></li>
-<li><a href="quote.html">Devis</a></li>
-<li><a href="jobs.html" class="active">Recrutement</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</header>
-<section class="hero"><h1>Rejoindre SORA</h1></section>
-<section class="section">
-<h2 class="section-title">Devenez hôtesse ou hôte d'accueil</h2>
-<div class="recruitment-grid">
-<div class="info-box">
-<h3>📋 Profil recherché</h3>
-<ul><li>Présentation soignée et élégante</li><li>Excellente maîtrise du français (anglais apprécié)</li><li>Sens du relationnel et discrétion</li><li>Réactivité et professionnalisme</li><li>Expérience en accueil ou événementiel (un plus)</li></ul>
-<br>
-<h3>✨ Ce que nous offrons</h3>
-<ul><li>Missions variées dans des lieux prestigieux</li><li>Formation continue aux codes du luxe</li><li>Contrats flexibles (CDI, CDD, extra)</li><li>Rémunération attractive</li></ul>
-</div>
-<div class="form-box">
-<h3 style="color:var(--gold);margin-bottom:20px;">Candidature spontanée</h3>
-<form id="recruitForm">
-<div class="form-group"><label>Nom complet *</label><input type="text" required></div>
-<div class="form-group"><label>Email *</label><input type="email" required></div>
-<div class="form-group"><label>Téléphone *</label><input type="tel" required></div>
-<div class="form-group"><label>Message / Parcours</label><textarea rows="4" placeholder="Décrivez votre expérience et motivation..."></textarea></div>
-<button type="submit" class="btn-submit">Envoyer ma candidature</button>
-</form>
-<div id="recruitResponse" style="margin-top:15px;text-align:center;color:green;"></div>
-</div>
-</div>
-</section>
-<footer><h3>SORA Agency</h3><p>Accueil • Élégance • Professionnalisme</p><p>© 2026 SORA Agency - Tous droits réservés.</p></footer>
-<script>
-function toggleMenu(){document.getElementById('menu').classList.toggle('active');}
-window.addEventListener('scroll',()=>{const header=document.querySelector('header');if(window.scrollY>50){header.style.background="rgba(17,17,17,.98)";header.style.padding="15px 8%";}else{header.style.background="rgba(17,17,17,.95)";header.style.padding="20px 8%";}});
-document.getElementById('recruitForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('recruitResponse').innerHTML="✅ Merci ! Nous étudierons votre candidature avec attention.";this.reset();});
-</script>
+<header><div class="logo">SORA</div><div class="menu-btn" onclick="toggleMenu()">☰</div><nav id="menu"><ul><li><a href="index.html">Accueil</a></li><li><a href="about.html">À propos</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Réalisations</a></li><li><a href="quote.html" class="active">Devis</a></li><li><a href="jobs.html">Recrutement</a></li><li><a href="contact.html">Contact</a></li></ul></nav></header>
+<section class="hero"><h1>Demande de devis</h1></section>
+<section class="section"><h2 class="section-title reveal"><span>Obtenez un devis personnalisé</span><div class="title-decoration"></div></h2><div class="form-container reveal"><form id="quoteForm"><div class="form-group"><label>Nom complet *</label><input type="text" required></div><div class="form-group"><label>Email *</label><input type="email" required></div><div class="form-group"><label>Téléphone</label><input type="tel"></div><div class="form-group"><label>Type d'événement *</label><select required><option>Sélectionnez</option><option>Salon professionnel</option><option>Conférence / Congrès</option><option>Gala / Soirée privée</option><option>Lancement de produit</option></select></div><div class="form-group"><label>Date prévisionnelle *</label><input type="date" required></div><div class="form-group"><label>Nombre d'hôtesses</label><input type="number" value="2" min="1"></div><div class="form-group"><label>Message</label><textarea rows="4"></textarea></div><button type="submit" class="btn-submit">Envoyer la demande</button></form><div id="formResponse" style="margin-top:1rem;text-align:center;color:green;"></div></div></section>
+<footer><div class="footer-container"><div class="footer-col"><h4>SORA Agency</h4><p>L'excellence de l'accueil événementiel.</p><div class="social-links"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-behance"></i></a></div></div><div class="footer-col"><h4>Liens rapides</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="services.html">Services</a></li><li><a href="jobs.html">Recrutement</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><p>📞 +33 (0)1 23 45 67 89</p><p>✉️ contact@sora-agency.fr</p><p>📍 Paris, France</p></div></div><div class="footer-bottom"><p>© 2026 SORA Agency — Tous droits réservés.</p></div></footer>
+<script>function toggleMenu(){document.getElementById('menu').classList.toggle('active');}
+const reveals=document.querySelectorAll('.reveal');const checkScroll=()=>{reveals.forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight-80)el.classList.add('active');});};window.addEventListener('scroll',checkScroll);window.addEventListener('load',checkScroll);
+let header=document.querySelector('header');window.addEventListener('scroll',()=>{if(window.scrollY>50){header.style.background="rgba(10,10,10,.97)";header.style.padding="0.9rem 6%";}else{header.style.background="rgba(10,10,10,.92)";header.style.padding="1.2rem 6%";}});
+document.getElementById('quoteForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('formResponse').innerHTML="✅ Merci ! Notre équipe vous contactera sous 24h.";this.reset();});</script>
 </body>
 </html>
