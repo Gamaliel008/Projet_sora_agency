@@ -987,4 +987,19 @@
         window.addEventListener('load', checkReveal);
 
         // ============================================================
-        //
+        // HEADER SCROLL EFFET
+        // ============================================================
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.background = "rgba(10,10,10,0.98)";
+                header.style.padding = "1rem 6%";
+            } else {
+                header.style.background = "rgba(10,10,10,0.92)";
+                header.style.padding = "1.6rem 6%";
+            }
+        });
+    </script>
+
+</body>
+</html>
