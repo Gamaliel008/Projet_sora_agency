@@ -1,510 +1,990 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SORA Agency : Agence d'accueil événementiel haut de gamme. Hôtesses professionnelles, accompagnement VIP, brand activation.">
-  <title>SORA Agency | Accueil événementiel d'excellence</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
-  <style>
-    /* ===== RESET & COULEURS PREMIUM ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #F8F8F6; color: #1E1E1E; font-family: 'Inter', sans-serif; overflow-x: hidden; }
-    :root {
-      --gold: #C6A43F;
-      --gold-dark: #A8882E;
-      --gold-light: #E0C26A;
-      --black: #0A0A0A;
-      --dark: #121212;
-      --gray: #5A5A5A;
-      --shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
-      --transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    h1, h2, h3, .logo { font-family: 'Playfair Display', serif; font-weight: 700; letter-spacing: -0.02em; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SORA Agency : Agence d'accueil événementiel haut de gamme. Hôtesses professionnelles, accompagnement VIP, conférences, salons.">
+    <title>SORA Agency | Accueil événementiel d'excellence</title>
     
-    /* ===== HEADER GLASS ===== */
-    header {
-      position: fixed; top: 0; left: 0; width: 100%;
-      padding: 1.2rem 6%;
-      background: rgba(10, 10, 10, 0.92);
-      backdrop-filter: blur(14px);
-      display: flex; justify-content: space-between; align-items: center;
-      z-index: 1000; transition: var(--transition);
-      border-bottom: 1px solid rgba(198, 164, 63, 0.25);
-    }
-    .logo { font-size: 2rem; background: linear-gradient(135deg, var(--gold-light), var(--gold)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    nav ul { display: flex; list-style: none; gap: 2rem; }
-    nav a { text-decoration: none; color: white; font-weight: 500; transition: .3s; position: relative; }
-    nav a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0%; height: 2px; background: var(--gold); transition: 0.3s; }
-    nav a:hover::after, nav a.active::after { width: 100%; }
-    nav a:hover, nav a.active { color: var(--gold); }
-    .menu-btn { display: none; font-size: 1.8rem; color: white; cursor: pointer; }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    /* ===== HERO ===== */
-    .hero {
-      position: relative; height: 100vh; min-height: 700px;
-      display: flex; align-items: center; justify-content: center; text-align: center;
-      overflow: hidden;
-    }
-    .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; filter: brightness(0.5); transition: transform 12s ease; }
-    .hero:hover .hero-bg { transform: scale(1.05); }
-    .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 20%, rgba(0,0,0,0.4), rgba(0,0,0,0.8)); z-index: 1; }
-    .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 0 1.5rem; animation: fadeUp 1s ease-out; }
-    .hero-content h1 { font-size: 5rem; color: white; margin-bottom: 1rem; text-shadow: 0 2px 25px rgba(0,0,0,0.3); }
-    .hero-content h1 span { background: linear-gradient(135deg, var(--gold-light), var(--gold)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .hero-content p { font-size: 1.25rem; color: rgba(255,255,255,0.92); margin-bottom: 2rem; max-width: 650px; margin-left: auto; margin-right: auto; }
-    .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.9rem 2.2rem; background: var(--gold); color: #0A0A0A; text-decoration: none; font-weight: 600; border-radius: 60px; transition: var(--transition); font-size: 1rem; border: none; cursor: pointer; }
-    .btn-outline { background: transparent; border: 1.5px solid var(--gold); color: white; }
-    .btn-outline:hover { background: var(--gold); color: #0A0A0A; transform: translateY(-3px); box-shadow: 0 12px 22px -10px rgba(198,164,63,0.5); }
-    .btn:hover { transform: translateY(-4px); box-shadow: 0 15px 25px -10px rgba(198,164,63,0.45); background: var(--gold-light); }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-    
-    /* ===== BANDEAU INFO (style Mwangeji) ===== */
-    .info-ticker {
-      background: var(--black);
-      color: white;
-      padding: 0.6rem 6%;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(198, 164, 63, 0.2);
-      margin-top: 80px;
-    }
-    .info-ticker .label {
-      color: var(--gold);
-      font-weight: 700;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      white-space: nowrap;
-    }
-    .info-ticker .ticker-content {
-      display: flex;
-      gap: 2.5rem;
-      overflow: hidden;
-      white-space: nowrap;
-      font-size: 0.85rem;
-      color: #CCCCCC;
-      animation: tickerScroll 25s linear infinite;
-    }
-    .info-ticker .ticker-content span { display: inline-block; }
-    @keyframes tickerScroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    
-    /* ===== SECTIONS GÉNÉRALES ===== */
-    .section { padding: 5rem 6%; }
-    .section-dark { background: var(--black); color: white; }
-    .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 3rem; }
-    .section-title span { background: linear-gradient(120deg, var(--gold), var(--gold-dark)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .title-decoration { width: 70px; height: 3px; background: var(--gold); margin: 0.6rem auto 0; border-radius: 4px; }
-    .text-center { text-align: center; }
-    
-    /* ===== ABOUT ===== */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .about-grid img { width: 100%; border-radius: 28px; box-shadow: var(--shadow); transition: var(--transition); }
-    .about-grid img:hover { transform: scale(1.02); }
-    .about-text p { font-size: 1.05rem; line-height: 1.8; color: var(--gray); margin-bottom: 1rem; }
-    
-    /* ===== SERVICES ===== */
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 2rem; }
-    .service-card {
-      background: white; padding: 2rem; border-radius: 28px;
-      box-shadow: 0 12px 25px rgba(0,0,0,0.05);
-      transition: var(--transition); text-align: center;
-      border: 1px solid rgba(0,0,0,0.02);
-    }
-    .service-card:hover { transform: translateY(-10px); box-shadow: 0 25px 40px -15px rgba(0,0,0,0.12); border-bottom: 3px solid var(--gold); }
-    .service-icon { font-size: 2.8rem; color: var(--gold); margin-bottom: 1rem; }
-    .service-card h3 { font-size: 1.4rem; margin-bottom: 0.8rem; }
-    .service-card p { color: var(--gray); line-height: 1.6; }
-    
-    /* ===== STATS ===== */
-    .stats-section {
-      background: linear-gradient(115deg, #0F0F0F, #1A1A1A);
-      padding: 5rem 6%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2.5rem;
-      text-align: center;
-    }
-    .stat-item h2 { font-size: 3.2rem; font-weight: 700; color: var(--gold); font-family: 'Inter', sans-serif; letter-spacing: -1px; }
-    .stat-item p { color: #CCCCCC; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem; font-weight: 500; }
-    
-    /* ===== TÉMOIGNAGES (NOUVEAU) ===== */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    .testimonial-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 28px;
-      box-shadow: 0 12px 25px rgba(0,0,0,0.05);
-      transition: var(--transition);
-      border-left: 4px solid var(--gold);
-    }
-    .testimonial-card:hover { transform: translateY(-6px); }
-    .testimonial-card .stars { color: var(--gold); margin-bottom: 0.8rem; }
-    .testimonial-card blockquote { font-style: italic; color: var(--gray); line-height: 1.6; }
-    .testimonial-card .author { margin-top: 1rem; font-weight: 600; color: var(--black); }
-    .testimonial-card .role { font-size: 0.8rem; color: var(--gray); }
-    
-    /* ===== BLOG / ACTUALITÉS (NOUVEAU) ===== */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    .blog-card {
-      background: white;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 12px 25px rgba(0,0,0,0.05);
-      transition: var(--transition);
-    }
-    .blog-card:hover { transform: translateY(-10px); box-shadow: 0 25px 40px -15px rgba(0,0,0,0.12); }
-    .blog-card img { width: 100%; height: 220px; object-fit: cover; }
-    .blog-card .content { padding: 1.5rem; }
-    .blog-card .tag { display: inline-block; background: var(--gold); color: #0A0A0A; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 0.8rem; }
-    .blog-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
-    .blog-card p { color: var(--gray); font-size: 0.9rem; line-height: 1.6; }
-    .blog-card .read-more { color: var(--gold); font-weight: 600; text-decoration: none; display: inline-block; margin-top: 1rem; }
-    .blog-card .read-more:hover { color: var(--gold-dark); }
-    
-    /* ===== CTA ===== */
-    .cta-premium {
-      background: linear-gradient(120deg, #121212, #1E1E1E);
-      padding: 5rem 6%;
-      text-align: center;
-      color: white;
-    }
-    .cta-premium h2 { font-size: 2.8rem; margin-bottom: 1.5rem; }
-    .cta-premium .btn { background: var(--gold); color: #0A0A0A; }
-    .cta-premium .btn:hover { background: var(--gold-light); }
-    
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--black);
-      color: #E0E0E0;
-      padding: 3rem 6% 2rem;
-      border-top: 2px solid rgba(198, 164, 63, 0.3);
-    }
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-    .footer-col h4 { color: var(--gold); font-size: 1.2rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
-    .footer-col p, .footer-col ul li a { font-size: 0.9rem; color: #B0B0B0; text-decoration: none; line-height: 1.8; }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li a:hover { color: var(--gold); }
-    .social-links { display: flex; gap: 1.2rem; margin-top: 1rem; }
-    .social-links a { color: #B0B0B0; font-size: 1.3rem; transition: var(--transition); }
-    .social-links a:hover { color: var(--gold); transform: translateY(-3px); }
-    .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; color: #7A7A7A; }
-    
-    /* ===== ANIMATIONS REVEAL ===== */
-    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-    
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 850px) {
-      .hero-content h1 { font-size: 3rem; }
-      .hero-content p { font-size: 1rem; }
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .section-title { font-size: 2rem; }
-      .cta-premium h2 { font-size: 1.8rem; }
-      .info-ticker .ticker-content { font-size: 0.7rem; gap: 1.5rem; }
-      .menu-btn { display: block; }
-      nav {
-        display: none;
-        position: absolute;
-        top: 75px;
-        left: 0;
-        width: 100%;
-        background: rgba(10,10,10,0.98);
-        backdrop-filter: blur(12px);
-        padding: 1.5rem;
-        border-radius: 0 0 24px 24px;
-      }
-      nav.active { display: block; }
-      nav ul { flex-direction: column; align-items: center; gap: 1rem; }
-      .footer-container { grid-template-columns: 1fr; text-align: center; }
-      .social-links { justify-content: center; }
-      .stats-section { gap: 1.5rem; padding: 3rem 6%; }
-      .stat-item h2 { font-size: 2.2rem; }
-    }
-  </style>
+    <style>
+        /* ============================================================
+                   RESET & COULEURS PREMIUM
+                   ============================================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #C6A43F;
+            --gold-dark: #A8882E;
+            --gold-light: #E0C26A;
+            --black: #0A0A0A;
+            --dark: #121212;
+            --white: #FFFFFF;
+            --gray-light: #F5F5F0;
+            --gray-text: #888888;
+            --shadow: 0 20px 40px -16px rgba(0,0,0,0.15);
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        body {
+            background: var(--gray-light);
+            color: var(--black);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* ============================================================
+                   HEADER – ÉPURÉ ET TRANSPARENT
+                   ============================================================ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.6rem 6%;
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(198, 164, 63, 0.15);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0%;
+            height: 1.5px;
+            background: var(--gold);
+            transition: width 0.4s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--gold);
+        }
+
+        /* Bouton WhatsApp dans le header */
+        .btn-whatsapp-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25D366;
+            color: white !important;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: none;
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp-header::after {
+            display: none;
+        }
+
+        .btn-whatsapp-header:hover {
+            background: #20b85a;
+            color: white !important;
+            transform: scale(1.05);
+        }
+
+        .btn-whatsapp-header i {
+            font-size: 1.1rem;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 1.6rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* ============================================================
+                   HERO – GRAND FORMAT, ÉPURÉ
+                   ============================================================ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: var(--black);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.7;
+            filter: brightness(0.5) contrast(1.1);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 820px;
+            padding: 0 2rem;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .hero-content .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 {
+            font-size: 5rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 1.2rem;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero-content h1 span {
+            color: var(--gold);
+        }
+
+        .hero-content .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 0.8rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-content .services-tag {
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content .services-tag span {
+            margin: 0 0.8rem;
+            color: var(--gold);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.9rem 2.4rem;
+            background: var(--gold);
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            border-radius: 60px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px -8px rgba(198, 164, 63, 0.4);
+            background: var(--gold-light);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white !important;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20b85a;
+            box-shadow: 0 12px 30px -8px rgba(37, 211, 102, 0.4);
+            color: white !important;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============================================================
+                   SECTIONS – AÉRATION MAXIMALE
+                   ============================================================ */
+        .section {
+            padding: 7rem 6%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.6rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            color: var(--black);
+        }
+
+        .section-title .gold {
+            color: var(--gold);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--gray-text);
+            max-width: 600px;
+            margin: 0 auto 3.5rem;
+            line-height: 1.7;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto 3rem;
+        }
+
+        /* ============================================================
+                   RÉALISATIONS – GALERIE PREMIUM
+                   ============================================================ */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--black);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 1.5rem 1.5rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .gallery-item .overlay h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .gallery-item .overlay p {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 0.2rem;
+            font-weight: 300;
+        }
+
+        /* ============================================================
+                   SERVICES – CARTES ÉLÉGANTES
+                   ============================================================ */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -16px rgba(0,0,0,0.12);
+            border-color: rgba(198, 164, 63, 0.2);
+        }
+
+        .service-icon {
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.5px;
+        }
+
+        .service-card p {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* ============================================================
+                   TÉMOIGNAGES – SOB RES
+                   ============================================================ */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border-left: 3px solid var(--gold);
+        }
+
+        .testimonial-card .stars {
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 0.95rem;
+            font-weight: 300;
+            font-style: italic;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .testimonial-card .author {
+            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-card .role {
+            font-size: 0.75rem;
+            color: var(--gray-text);
+            font-weight: 300;
+        }
+
+        /* ============================================================
+                   CTA – ÉPURÉ
+                   ============================================================ */
+        .cta-section {
+            background: var(--black);
+            padding: 5rem 6%;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.6);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-section .btn-group {
+            gap: 1.2rem;
+        }
+
+        /* ============================================================
+                   FOOTER – MINIMAL
+                   ============================================================ */
+        footer {
+            background: var(--black);
+            color: rgba(255,255,255,0.5);
+            padding: 3rem 6% 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col p,
+        .footer-col ul li a {
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            line-height: 2;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold);
+        }
+
+        .footer-col .logo-footer {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: rgba(255,255,255,0.3);
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.75rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.25);
+        }
+
+        /* ============================================================
+                   BOUTON WHATSAPP FLOTTANT (visible partout)
+                   ============================================================ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            background: #25D366;
+            color: white;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
+        }
+
+        /* ============================================================
+                   REVEAL ANIMATION – LÉGÈRE
+                   ============================================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================================
+                   RESPONSIVE
+                   ============================================================ */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 850px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            .hero-content .tagline {
+                font-size: 1rem;
+            }
+            .menu-btn {
+                display: block;
+            }
+            nav {
+                display: none;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: rgba(10,10,10,0.98);
+                padding: 2rem;
+                border-radius: 0 0 20px 20px;
+            }
+            nav.active {
+                display: block;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 1.2rem;
+                align-items: center;
+            }
+            .btn-whatsapp-header {
+                display: none;
+            }
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            .section {
+                padding: 4rem 5%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .social-links {
+                justify-content: center;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                justify-content: center;
+                max-width: 320px;
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.6rem;
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">SORA</div>
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  <nav id="menu">
-    <ul>
-      <li><a href="index.html" class="active">Accueil</a></li>
-      <li><a href="about.html">À propos</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="gallery.html">Réalisations</a></li>
-      <li><a href="testimonials.html">Témoignages</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="quote.html">Devis</a></li>
-      <li><a href="jobs.html">Recrutement</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <!-- ============================================================
+    HEADER
+    ============================================================ -->
+    <header>
+        <a href="index.html" class="logo">SORA</a>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Réalisations</a></li>
+                <li><a href="testimonials.html">Témoignages</a></li>
+                <li><a href="quote.html">Devis</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" class="btn-whatsapp-header"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- ===== BANDEAU INFO (style Mwangeji) ===== -->
-<div class="info-ticker">
-  <span class="label">🟢 EN DIRECT</span>
-  <div class="ticker-content">
-    <span>Nouveau partenariat stratégique signé avec un groupe hôtelier international •</span>
-    <span>+35% de demandes d'accueil événementiel en 2024 •</span>
-    <span>Lancement de notre nouvelle formation "Excellence d'accueil" •</span>
-    <span>Ouverture d'un bureau à Dubaï en janvier 2025 •</span>
-    <span>SORA nommée "Meilleure agence d'accueil" aux Event Awards 2024 •</span>
-    <span>Nouveau partenariat stratégique signé avec un groupe hôtelier international •</span>
-    <span>+35% de demandes d'accueil événementiel en 2024 •</span>
-    <span>Lancement de notre nouvelle formation "Excellence d'accueil" •</span>
-    <span>Ouverture d'un bureau à Dubaï en janvier 2025 •</span>
-    <span>SORA nommée "Meilleure agence d'accueil" aux Event Awards 2024 •</span>
-  </div>
-</div>
+    <!-- ============================================================
+    HERO – GRAND FORMAT
+    ============================================================ -->
+    <section class="hero">
+        <img class="hero-bg" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=2000&q=80" alt="SORA Agency événement premium">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="subtitle">Agence d'accueil événementiel</p>
+            <h1>SORA <span>Agency</span></h1>
+            <p class="tagline">L'excellence de l'accueil pour vos événements professionnels et privés.</p>
+            <p class="services-tag">
+                Hôtesses <span>•</span> Accueil VIP <span>•</span> Conférences <span>•</span> Salons <span>•</span> Événements corporatifs
+            </p>
+            <div class="btn-group">
+                <a href="quote.html" class="btn">Demander un devis</a>
+                <a href="#" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </section>
 
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <img class="hero-bg" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=2000&q=80" alt="SORA événement luxe">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1>SORA <span>Agency</span></h1>
-    <p>L'élégance, la courtoisie et le professionnalisme au service de votre image.</p>
-    <div class="btn-group">
-      <a href="quote.html" class="btn">✨ Demander un devis</a>
-      <a href="about.html" class="btn-outline btn">Découvrir l'agence</a>
-    </div>
-  </div>
-</section>
+    <!-- ============================================================
+    RÉALISATIONS – PREUVES VISUELLES (après la bannière)
+    ============================================================ -->
+    <section class="section">
+        <h2 class="section-title reveal">Nos <span class="gold">réalisations</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle reveal">Des événements d'exception, des hôtesses d'excellence, des moments uniques.</p>
+        <div class="gallery-grid">
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Conférence d'affaires">
+                <div class="overlay"><h3>Conférence d'affaires</h3><p>Paris, 2024</p></div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80" alt="Gala de prestige">
+                <div class="overlay"><h3>Gala de prestige</h3><p>Cannes, 2024</p></div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1540317580384-e5d43867caa6?auto=format&fit=crop&w=800&q=80" alt="Accueil VIP">
+                <div class="overlay"><h3>Accueil VIP</h3><p>Monaco, 2024</p></div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80" alt="Salon professionnel">
+                <div class="overlay"><h3>Salon professionnel</h3><p>Lyon, 2024</p></div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=800&q=80" alt="Cérémonie d'entreprise">
+                <div class="overlay"><h3>Cérémonie d'entreprise</h3><p>Bordeaux, 2024</p></div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80" alt="Équipe SORA">
+                <div class="overlay"><h3>Notre équipe</h3><p>Des hôtesses d'exception</p></div>
+            </div>
+        </div>
+    </section>
 
-<!-- ===== SECTION À PROPOS ===== -->
-<section class="section">
-  <h2 class="section-title reveal"><span>Notre ADN</span> · L'excellence française<div class="title-decoration"></div></h2>
-  <div class="about-grid">
-    <div class="about-img reveal"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Équipe SORA"></div>
-    <div class="about-text reveal">
-      <p><strong>SORA Agency</strong> est la référence française en matière d'accueil événementiel premium. Nous recrutons, formons et déployons des hôtesses et hôtes d'exception pour les plus belles manifestations.</p>
-      <p>Notre mission : transformer chaque rencontre en souvenir d'élégance, chaque geste en signature de luxe. Partenaires des institutions, marques internationales et organisateurs exigeants.</p>
-      <p><strong>+120</strong> professionnels formés chaque année · <strong>+250</strong> événements réalisés · <strong>98%</strong> de satisfaction client.</p>
-    </div>
-  </div>
-</section>
+    <!-- ============================================================
+    SERVICES – CARTES ÉLÉGANTES
+    ============================================================ -->
+    <section class="section" style="background: white;">
+        <h2 class="section-title reveal">Nos <span class="gold">services</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle reveal">Des prestations sur mesure, conçues pour sublimer votre événement.</p>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon">🎯</div>
+                <h3>Accueil Événementiel</h3>
+                <p>Mariages, conférences, salons, cérémonies et événements privés.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">👩‍💼</div>
+                <h3>Hôtesses Professionnelles</h3>
+                <p>Personnel qualifié, formé et élégant pour représenter votre image.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">👑</div>
+                <h3>Accompagnement VIP</h3>
+                <p>Prise en charge de personnalités et invités de marque.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">📢</div>
+                <h3>Street Marketing</h3>
+                <p>Promotion de marques et produits sur le terrain.</p>
+            </div>
+        </div>
+    </section>
 
-<!-- ===== SERVICES ===== -->
-<section class="section section-dark">
-  <h2 class="section-title reveal"><span>Nos services</span> · Sur mesure<div class="title-decoration"></div></h2>
-  <div class="services-grid">
-    <div class="service-card reveal"><div class="service-icon">🎯</div><h3>Accueil Événementiel</h3><p>Congrès, salons, lancements, soirées privées et cérémonies prestigieuses.</p></div>
-    <div class="service-card reveal"><div class="service-icon">👩‍💼</div><h3>Hôtesses d'excellence</h3><p>Professionnelles formées aux codes du luxe et aux langues internationales.</p></div>
-    <div class="service-card reveal"><div class="service-icon">👑</div><h3>Accompagnement VIP</h3><p>Service white glove, gestion protocolaire et expérience personnalisée.</p></div>
-    <div class="service-card reveal"><div class="service-icon">📢</div><h3>Brand Activation</h3><p>Street marketing, sampling, animations éphémères pour un impact immédiat.</p></div>
-  </div>
-</section>
+    <!-- ============================================================
+    TÉMOIGNAGES
+    ============================================================ -->
+    <section class="section">
+        <h2 class="section-title reveal">Ce qu'ils disent de <span class="gold">SORA</span></h2>
+        <div class="section-divider"></div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal">
+                <div class="stars">★★★★★</div>
+                <blockquote>"Une équipe exceptionnelle, d'une élégance rare. Nos invités ont été enchantés."</blockquote>
+                <div class="author">Sophie Dubois</div>
+                <div class="role">Directrice événementielle, Groupe Accor</div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="stars">★★★★★</div>
+                <blockquote>"Des hôtesses d'une discrétion et d'un professionnalisme remarquables."</blockquote>
+                <div class="author">Jean-Pierre Martin</div>
+                <div class="role">CEO, Maison Cartier</div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="stars">★★★★★</div>
+                <blockquote>"SORA a été le partenaire idéal pour notre congrès international."</blockquote>
+                <div class="author">Marie-Claire Leblanc</div>
+                <div class="role">Relations publiques, Groupe LVMH</div>
+            </div>
+        </div>
+    </section>
 
-<!-- ===== STATS ===== -->
-<div class="stats-section">
-  <div class="stat-item reveal"><h2 class="counter" data-target="248">0</h2><p>Événements réalisés</p></div>
-  <div class="stat-item reveal"><h2 class="counter" data-target="612">0</h2><p>Clients satisfaits</p></div>
-  <div class="stat-item reveal"><h2 class="counter" data-target="124">0</h2><p>Talents SORA</p></div>
-  <div class="stat-item reveal"><h2 class="counter" data-target="98">0</h2><p>% de satisfaction</p></div>
-</div>
+    <!-- ============================================================
+    CTA
+    ============================================================ -->
+    <section class="cta-section">
+        <h2 class="reveal">Un événement d'exception mérite <span style="color: var(--gold);">SORA</span></h2>
+        <p class="reveal">Contactez-nous pour un devis personnalisé en 24h.</p>
+        <div class="btn-group reveal">
+            <a href="quote.html" class="btn">Demander un devis</a>
+            <a href="#" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </section>
 
-<!-- ===== TÉMOIGNAGES (NOUVEAU) ===== -->
-<section class="section">
-  <h2 class="section-title reveal"><span>Ils nous font confiance</span> · Témoignages<div class="title-decoration"></div></h2>
-  <div class="testimonials-grid">
-    <div class="testimonial-card reveal">
-      <div class="stars">★★★★★</div>
-      <blockquote>"SORA a été le partenaire idéal pour notre congrès international. Leur équipe a su allier professionnalisme et élégance, nos invités ont été enchantés."</blockquote>
-      <div class="author">Sophie Dubois</div>
-      <div class="role">Directrice des événements, Groupe Hôtelier Accor</div>
-    </div>
-    <div class="testimonial-card reveal">
-      <div class="stars">★★★★★</div>
-      <blockquote>"Une agence d'exception qui comprend parfaitement les enjeux du luxe. Les hôtesses SORA sont de véritables ambassadrices de notre marque."</blockquote>
-      <div class="author">Jean-Paul Martin</div>
-      <div class="role">CEO, Maison de Joaillerie Cartier</div>
-    </div>
-    <div class="testimonial-card reveal">
-      <div class="stars">★★★★★</div>
-      <blockquote>"Un service sur-mesure qui a dépassé nos attentes. La rigueur et la discrétion de l'équipe SORA nous ont conquis."</blockquote>
-      <div class="author">Marie-Claire Leblanc</div>
-      <div class="role">Responsable des relations publiques, Groupe LVMH</div>
-    </div>
-  </div>
-</section>
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="logo-footer">SORA</div>
+                <p style="margin-top: 0.8rem;">L'excellence de l'accueil événementiel.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Réalisations</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html">Accueil événementiel</a></li>
+                    <li><a href="services.html">Hôtesses d'excellence</a></li>
+                    <li><a href="services.html">Accompagnement VIP</a></li>
+                    <li><a href="services.html">Street marketing</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>📞 +33 (0)1 23 45 67 89</p>
+                <p>✉️ contact@sora-agency.fr</p>
+                <p>📍 Paris, France</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 SORA Agency — Tous droits réservés.</p>
+        </div>
+    </footer>
 
-<!-- ===== BLOG / ACTUALITÉS (NOUVEAU) ===== -->
-<section class="section section-dark">
-  <h2 class="section-title reveal"><span>Actualités</span> · Le blog SORA<div class="title-decoration"></div></h2>
-  <div class="blog-grid">
-    <div class="blog-card reveal">
-      <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Conférence SORA">
-      <div class="content">
-        <span class="tag">Événement</span>
-        <h3>SORA nommée "Meilleure agence d'accueil 2024"</h3>
-        <p>L'agence a reçu cette distinction lors des prestigieux Event Awards à Paris, récompensant l'excellence de ses prestations.</p>
-        <a href="#" class="read-more">Lire la suite →</a>
-      </div>
-    </div>
-    <div class="blog-card reveal">
-      <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80" alt="Formation SORA">
-      <div class="content">
-        <span class="tag">Formation</span>
-        <h3>Lancement de la formation "Excellence d'accueil"</h3>
-        <p>Un programme intensif de 3 mois pour former les futurs talents de l'accueil événementiel haut de gamme.</p>
-        <a href="#" class="read-more">Lire la suite →</a>
-      </div>
-    </div>
-    <div class="blog-card reveal">
-      <img src="https://images.unsplash.com/photo-1540317580384-e5d43867caa6?auto=format&fit=crop&w=800&q=80" alt="Expansion SORA">
-      <div class="content">
-        <span class="tag">Expansion</span>
-        <h3>SORA s'implante à Dubaï et à Genève</h3>
-        <p>L'agence ouvre deux nouveaux bureaux pour accompagner ses clients internationaux sur les plus grands événements mondiaux.</p>
-        <a href="#" class="read-more">Lire la suite →</a>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- ============================================================
+    WHATSAPP FLOTTANT (visible partout)
+    ============================================================ -->
+    <a href="#" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-<!-- ===== CTA ===== -->
-<section class="cta-premium">
-  <h2 class="reveal">Donnez à votre événement une signature d'exception</h2>
-  <a href="quote.html" class="btn reveal">📄 Obtenir un devis personnalisé</a>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="footer-container">
-    <div class="footer-col">
-      <h4>SORA Agency</h4>
-      <p>L'excellence de l'accueil événementiel. Élégance, professionnalisme et créativité au service de votre image.</p>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-behance"></i></a>
-        <a href="#"><i class="fab fa-x-twitter"></i></a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Liens rapides</h4>
-      <ul>
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="gallery.html">Réalisations</a></li>
-        <li><a href="jobs.html">Recrutement</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="services.html">Accueil événementiel</a></li>
-        <li><a href="services.html">Hôtesses d'excellence</a></li>
-        <li><a href="services.html">Accompagnement VIP</a></li>
-        <li><a href="services.html">Brand activation</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <p>📞 +33 (0)1 23 45 67 89</p>
-      <p>✉️ contact@sora-agency.fr</p>
-      <p>📍 12 avenue des Champs-Élysées<br>75008 Paris, France</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 SORA Agency — Tous droits réservés. Agence d'accueil certifiée d'excellence.</p>
-    <p style="margin-top: 0.5rem; color: #555; font-size: 0.7rem;">
-      <a href="legal.html" style="color: #555; text-decoration: none;">Mentions légales</a> · 
-      <a href="sitemap.html" style="color: #555; text-decoration: none;">Plan du site</a>
-    </p>
-  </div>
-</footer>
-
-<script>
-  // Menu mobile
-  function toggleMenu() {
-    document.getElementById('menu').classList.toggle('active');
-  }
-
-  // Compteurs animés
-  const counters = document.querySelectorAll('.counter');
-  let counted = false;
-
-  const startCounters = () => {
-    if (counted) return;
-    counted = true;
-    counters.forEach(counter => {
-      const target = parseInt(counter.dataset.target, 10);
-      let current = 0;
-      const increment = target / 55;
-      const update = () => {
-        current += increment;
-        if (current < target) {
-          counter.innerText = Math.ceil(current);
-          requestAnimationFrame(update);
-        } else {
-          counter.innerText = target;
+    <!-- ============================================================
+    SCRIPTS
+    ============================================================ -->
+    <script>
+        // Menu mobile
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('active');
         }
-      };
-      update();
-    });
-  };
 
-  // Révélation au scroll
-  const reveals = document.querySelectorAll('.reveal');
-  const checkScroll = () => {
-    const windowHeight = window.innerHeight;
-    reveals.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < windowHeight - 80) {
-        el.classList.add('active');
-      }
-    });
-    const statsSection = document.querySelector('.stats-section');
-    if (statsSection && statsSection.getBoundingClientRect().top < window.innerHeight - 50) {
-      startCounters();
-    }
-  };
+        // Fermer le menu au clic sur un lien
+        document.querySelectorAll('#menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu').classList.remove('active');
+            });
+        });
 
-  window.addEventListener('scroll', checkScroll);
-  window.addEventListener('load', checkScroll);
+        // ============================================================
+        // REVEAL AU SCROLL
+        // ============================================================
+        const revealElements = document.querySelectorAll('.reveal');
 
-  // Header scroll effet
-  let header = document.querySelector('header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.style.background = "rgba(10,10,10,0.97)";
-      header.style.padding = "0.9rem 6%";
-    } else {
-      header.style.background = "rgba(10,10,10,0.92)";
-      header.style.padding = "1.2rem 6%";
-    }
-  });
-</script>
-</body>
-</html>
+        const checkReveal = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < windowHeight - 80) {
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', checkReveal);
+        window.addEventListener('load', checkReveal);
+
+        // ============================================================
+        //
