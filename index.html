@@ -6,14 +6,15 @@
     <meta name="description" content="SORA Agency : Agence d'accueil événementiel haut de gamme. Hôtesses professionnelles, accompagnement VIP, conférences, salons.">
     <title>SORA Agency | Accueil événementiel d'excellence</title>
     
+    <!-- ===== POLICES PREMIUM ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
         /* ============================================================
-                   RESET & COULEURS PREMIUM
+                   RESET & VARIABLES
                    ============================================================ */
         * {
             margin: 0;
@@ -28,72 +29,83 @@
             --black: #0A0A0A;
             --dark: #121212;
             --white: #FFFFFF;
-            --gray-light: #F5F5F0;
+            --gray-bg: #F8F8F6;
             --gray-text: #888888;
-            --shadow: 0 20px 40px -16px rgba(0,0,0,0.15);
-            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gray-light: #AAAAAA;
+            --shadow-sm: 0 4px 20px rgba(0,0,0,0.04);
+            --shadow-md: 0 20px 40px -16px rgba(0,0,0,0.15);
+            --shadow-lg: 0 40px 60px -20px rgba(0,0,0,0.25);
+            --transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-smooth: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         body {
-            background: var(--gray-light);
+            background: var(--gray-bg);
             color: var(--black);
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-weight: 300;
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        h1, h2, h3, .logo {
-            font-family: 'Playfair Display', Georgia, serif;
+        h1, h2, h3, h4, .logo {
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
             font-weight: 600;
             letter-spacing: -0.02em;
         }
 
         /* ============================================================
-                   HEADER – ÉPURÉ ET TRANSPARENT
+                   HEADER – ÉPURÉ ET LUXUEUX
                    ============================================================ */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 1.6rem 6%;
-            background: rgba(10, 10, 10, 0.92);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            padding: 1.4rem 6%;
+            background: rgba(10, 10, 10, 0.94);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
             transition: var(--transition);
-            border-bottom: 1px solid rgba(198, 164, 63, 0.15);
+            border-bottom: 1px solid rgba(198, 164, 63, 0.12);
         }
 
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--gold);
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            color: var(--gold-light);
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2.2rem;
+            gap: 2.4rem;
             align-items: center;
         }
 
         nav a {
             text-decoration: none;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.75);
             font-weight: 400;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
+            font-size: 0.78rem;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
             transition: var(--transition);
             position: relative;
+            font-family: 'Inter', sans-serif;
         }
 
         nav a::after {
@@ -104,7 +116,7 @@
             width: 0%;
             height: 1.5px;
             background: var(--gold);
-            transition: width 0.4s ease;
+            transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         nav a:hover::after,
@@ -117,18 +129,18 @@
             color: var(--gold);
         }
 
-        /* Bouton WhatsApp dans le header */
         .btn-whatsapp-header {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             background: #25D366;
             color: white !important;
-            padding: 0.4rem 1.2rem;
+            padding: 0.4rem 1.4rem;
             border-radius: 40px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             text-transform: none;
+            letter-spacing: 0.3px;
             transition: var(--transition);
         }
 
@@ -153,15 +165,16 @@
             cursor: pointer;
             background: none;
             border: none;
+            padding: 0.2rem;
         }
 
         /* ============================================================
-                   HERO – GRAND FORMAT, ÉPURÉ
+                   HERO – GRAND FORMAT AVEC TYPOGRAPHIE RAFFINÉE
                    ============================================================ */
         .hero {
             position: relative;
             height: 100vh;
-            min-height: 720px;
+            min-height: 760px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -179,7 +192,12 @@
             object-fit: cover;
             z-index: 0;
             opacity: 0.7;
-            filter: brightness(0.5) contrast(1.1);
+            filter: brightness(0.45) contrast(1.1);
+            transition: transform 8s ease;
+        }
+
+        .hero:hover .hero-bg {
+            transform: scale(1.04);
         }
 
         .hero-overlay {
@@ -188,63 +206,75 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+            background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.75) 100%);
             z-index: 1;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 820px;
+            max-width: 860px;
             padding: 0 2rem;
-            animation: fadeIn 1.2s ease-out;
+            animation: fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
-        .hero-content .subtitle {
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-content .badge {
+            display: inline-block;
             font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            font-size: 0.9rem;
-            letter-spacing: 4px;
+            font-weight: 400;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--gold);
-            margin-bottom: 1.5rem;
+            border: 1px solid rgba(198, 164, 63, 0.3);
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            margin-bottom: 1.8rem;
         }
 
         .hero-content h1 {
             font-size: 5rem;
-            font-weight: 600;
+            font-weight: 700;
             color: white;
-            margin-bottom: 1.2rem;
-            line-height: 1.1;
-            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            line-height: 1.08;
+            letter-spacing: -2px;
         }
 
-        .hero-content h1 span {
-            color: var(--gold);
+        .hero-content h1 .gold {
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .hero-content .tagline {
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 0.8rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.2rem;
         }
 
         .hero-content .services-tag {
-            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
             font-weight: 300;
-            color: rgba(255, 255, 255, 0.6);
-            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 2rem;
+            margin-bottom: 2.4rem;
         }
 
         .hero-content .services-tag span {
-            margin: 0 0.8rem;
             color: var(--gold);
+            margin: 0 0.6rem;
         }
 
         .btn-group {
@@ -257,13 +287,14 @@
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.7rem;
             padding: 0.9rem 2.4rem;
             background: var(--gold);
             color: var(--black);
             text-decoration: none;
+            font-family: 'Inter', sans-serif;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 0.5px;
             border-radius: 60px;
             transition: var(--transition);
@@ -272,22 +303,21 @@
         }
 
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px -8px rgba(198, 164, 63, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 35px -10px rgba(198, 164, 63, 0.45);
             background: var(--gold-light);
         }
 
         .btn-outline {
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             color: white;
         }
 
         .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             border-color: var(--gold);
             color: var(--gold);
-            transform: translateY(-2px);
         }
 
         .btn-whatsapp {
@@ -297,28 +327,28 @@
 
         .btn-whatsapp:hover {
             background: #20b85a;
-            box-shadow: 0 12px 30px -8px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 16px 35px -10px rgba(37, 211, 102, 0.4);
             color: white !important;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         /* ============================================================
-                   SECTIONS – AÉRATION MAXIMALE
+                   SECTIONS – AÉRATION ET TYPOGRAPHIE
                    ============================================================ */
         .section {
             padding: 7rem 6%;
         }
 
+        .section-light {
+            background: white;
+        }
+
         .section-title {
             text-align: center;
-            font-size: 2.6rem;
-            font-weight: 500;
-            margin-bottom: 1.2rem;
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
             color: var(--black);
+            letter-spacing: -1px;
         }
 
         .section-title .gold {
@@ -327,54 +357,59 @@
 
         .section-subtitle {
             text-align: center;
-            font-size: 1rem;
-            font-weight: 300;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            font-style: italic;
             color: var(--gray-text);
-            max-width: 600px;
+            max-width: 580px;
             margin: 0 auto 3.5rem;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .section-divider {
-            width: 60px;
+            width: 50px;
             height: 2px;
             background: var(--gold);
-            margin: 0 auto 3rem;
+            margin: 0 auto 2.5rem;
         }
 
         /* ============================================================
-                   RÉALISATIONS – GALERIE PREMIUM
+                   GALERIE – PHOTOS AVEC TEXTE + LIENS
                    ============================================================ */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            gap: 1.8rem;
         }
 
         .gallery-item {
             position: relative;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
             aspect-ratio: 4/3;
             background: var(--black);
             cursor: pointer;
-            transition: var(--transition);
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            display: block;
         }
 
         .gallery-item:hover {
             transform: scale(1.02);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-lg);
+            z-index: 10;
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
+            transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .gallery-item:hover img {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         .gallery-item .overlay {
@@ -382,34 +417,68 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 2rem 1.5rem 1.5rem;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 2.2rem 1.8rem 1.8rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85) 60%);
             color: white;
+            transform: translateY(20px);
             opacity: 0;
-            transition: opacity 0.4s ease;
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .gallery-item:hover .overlay {
+            transform: translateY(0);
             opacity: 1;
         }
 
-        .gallery-item .overlay h3 {
-            font-size: 1rem;
-            font-weight: 500;
+        .gallery-item .overlay .category {
+            display: inline-block;
             font-family: 'Inter', sans-serif;
-            letter-spacing: 1px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+        }
+
+        .gallery-item .overlay h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
         }
 
         .gallery-item .overlay p {
+            font-family: 'Inter', sans-serif;
             font-size: 0.8rem;
-            opacity: 0.7;
-            margin-top: 0.2rem;
             font-weight: 300;
+            opacity: 0.75;
+            margin-bottom: 0.6rem;
+        }
+
+        .gallery-item .overlay .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            transition: var(--transition);
+        }
+
+        .gallery-item .overlay .read-more i {
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .overlay .read-more i {
+            transform: translateX(4px);
         }
 
         /* ============================================================
-                   SERVICES – CARTES ÉLÉGANTES
+                   SERVICES – CARTES AVEC ICÔNES
                    ============================================================ */
         .services-grid {
             display: grid;
@@ -419,24 +488,27 @@
 
         .service-card {
             background: white;
-            padding: 2.5rem 2rem;
+            padding: 2.8rem 2rem;
             border-radius: 12px;
             text-align: center;
-            transition: var(--transition);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-sm);
             border: 1px solid rgba(0,0,0,0.04);
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px -16px rgba(0,0,0,0.12);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
             border-color: rgba(198, 164, 63, 0.2);
         }
 
         .service-icon {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             color: var(--gold);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .service-card h3 {
@@ -444,18 +516,18 @@
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 0.6rem;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
 
         .service-card p {
             font-size: 0.85rem;
-            color: var(--gray-text);
-            line-height: 1.6;
             font-weight: 300;
+            color: var(--gray-text);
+            line-height: 1.7;
         }
 
         /* ============================================================
-                   TÉMOIGNAGES – SOB RES
+                   TÉMOIGNAGES
                    ============================================================ */
         .testimonials-grid {
             display: grid;
@@ -467,73 +539,100 @@
             background: white;
             padding: 2.5rem 2rem;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            box-shadow: var(--shadow-sm);
             border-left: 3px solid var(--gold);
         }
 
         .testimonial-card .stars {
             color: var(--gold);
             font-size: 0.9rem;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             margin-bottom: 0.8rem;
         }
 
         .testimonial-card blockquote {
+            font-family: 'Playfair Display', serif;
             font-size: 0.95rem;
-            font-weight: 300;
+            font-weight: 400;
             font-style: italic;
             color: #333;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .testimonial-card .author {
             margin-top: 1rem;
+            font-family: 'Inter', sans-serif;
             font-weight: 600;
             font-size: 0.9rem;
         }
 
         .testimonial-card .role {
+            font-family: 'Inter', sans-serif;
             font-size: 0.75rem;
-            color: var(--gray-text);
             font-weight: 300;
+            color: var(--gray-text);
         }
 
         /* ============================================================
-                   CTA – ÉPURÉ
+                   CTA
                    ============================================================ */
         .cta-section {
             background: var(--black);
             padding: 5rem 6%;
             text-align: center;
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(198,164,63,0.06) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
         .cta-section h2 {
-            font-size: 2.4rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            font-size: 2.6rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .cta-section h2 .gold {
+            color: var(--gold);
         }
 
         .cta-section p {
-            font-size: 1rem;
-            font-weight: 300;
-            color: rgba(255,255,255,0.6);
+            position: relative;
+            z-index: 1;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            font-style: italic;
+            color: rgba(255,255,255,0.5);
             max-width: 500px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 2.5rem;
         }
 
         .cta-section .btn-group {
-            gap: 1.2rem;
+            position: relative;
+            z-index: 1;
         }
 
         /* ============================================================
-                   FOOTER – MINIMAL
+                   FOOTER
                    ============================================================ */
         footer {
             background: var(--black);
-            color: rgba(255,255,255,0.5);
-            padding: 3rem 6% 2rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            color: rgba(255,255,255,0.4);
+            padding: 3.5rem 6% 2rem;
+            border-top: 1px solid rgba(255,255,255,0.04);
         }
 
         .footer-container {
@@ -545,22 +644,24 @@
         }
 
         .footer-col h4 {
-            color: white;
-            font-size: 0.9rem;
-            font-weight: 600;
             font-family: 'Inter', sans-serif;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
+            letter-spacing: 1.2px;
+            margin-bottom: 1.2rem;
         }
 
         .footer-col p,
         .footer-col ul li a {
+            font-family: 'Inter', sans-serif;
             font-size: 0.85rem;
             font-weight: 300;
-            color: rgba(255,255,255,0.4);
+            color: rgba(255,255,255,0.35);
             text-decoration: none;
-            line-height: 2;
+            line-height: 2.2;
+            transition: var(--transition);
         }
 
         .footer-col ul {
@@ -573,39 +674,48 @@
 
         .footer-col .logo-footer {
             font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             color: var(--gold);
-            font-weight: 600;
+            font-weight: 700;
+        }
+
+        .footer-col .desc {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            line-height: 1.8;
         }
 
         .social-links {
             display: flex;
             gap: 1.2rem;
-            margin-top: 1rem;
+            margin-top: 1.2rem;
         }
 
         .social-links a {
-            color: rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.25);
             font-size: 1.1rem;
             transition: var(--transition);
         }
 
         .social-links a:hover {
             color: var(--gold);
+            transform: translateY(-3px);
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 2rem;
-            margin-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            font-size: 0.75rem;
+            padding-top: 2.5rem;
+            margin-top: 2.5rem;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
             font-weight: 300;
-            color: rgba(255,255,255,0.25);
+            color: rgba(255,255,255,0.2);
+            letter-spacing: 0.5px;
         }
 
         /* ============================================================
-                   BOUTON WHATSAPP FLOTTANT (visible partout)
+                   WHATSAPP FLOTTANT
                    ============================================================ */
         .whatsapp-float {
             position: fixed;
@@ -614,30 +724,31 @@
             z-index: 999;
             background: #25D366;
             color: white;
-            width: 58px;
-            height: 58px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+            box-shadow: 0 8px 35px rgba(37, 211, 102, 0.35);
             transition: var(--transition);
             text-decoration: none;
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.08);
-            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
+            transform: scale(1.08) rotate(-5deg);
+            box-shadow: 0 12px 45px rgba(37, 211, 102, 0.5);
+            color: white;
         }
 
         /* ============================================================
-                   REVEAL ANIMATION – LÉGÈRE
+                   REVEAL
                    ============================================================ */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: translateY(35px);
+            transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .reveal.active {
@@ -648,11 +759,11 @@
         /* ============================================================
                    RESPONSIVE
                    ============================================================ */
-        @media (max-width: 1024px) {
-            .services-grid {
+        @media (max-width: 1100px) {
+            .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .gallery-grid {
+            .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             .testimonials-grid {
@@ -662,10 +773,13 @@
 
         @media (max-width: 850px) {
             .hero-content h1 {
-                font-size: 3rem;
+                font-size: 3.2rem;
             }
             .hero-content .tagline {
-                font-size: 1rem;
+                font-size: 1.1rem;
+            }
+            .section-title {
+                font-size: 2.2rem;
             }
             .menu-btn {
                 display: block;
@@ -673,54 +787,63 @@
             nav {
                 display: none;
                 position: absolute;
-                top: 75px;
+                top: 70px;
                 left: 0;
                 width: 100%;
                 background: rgba(10,10,10,0.98);
+                backdrop-filter: blur(12px);
                 padding: 2rem;
-                border-radius: 0 0 20px 20px;
+                border-radius: 0 0 24px 24px;
+                border-bottom: 1px solid rgba(198,164,63,0.1);
             }
             nav.active {
                 display: block;
             }
             nav ul {
                 flex-direction: column;
-                gap: 1.2rem;
+                gap: 1.4rem;
                 align-items: center;
             }
             .btn-whatsapp-header {
                 display: none;
-            }
-            .services-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .gallery-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .testimonials-grid {
-                grid-template-columns: 1fr;
             }
             .footer-container {
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
             }
             .section {
-                padding: 4rem 5%;
+                padding: 4.5rem 5%;
+            }
+            .cta-section h2 {
+                font-size: 2rem;
             }
         }
 
         @media (max-width: 600px) {
             .hero-content h1 {
-                font-size: 2.2rem;
+                font-size: 2.4rem;
+                letter-spacing: -0.5px;
+            }
+            .hero-content .tagline {
+                font-size: 1rem;
+            }
+            .hero-content .services-tag {
+                font-size: 0.65rem;
+                letter-spacing: 0.8px;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                max-width: 450px;
+                margin: 0 auto;
             }
             .services-grid {
                 grid-template-columns: 1fr;
                 max-width: 400px;
                 margin: 0 auto;
             }
-            .gallery-grid {
+            .testimonials-grid {
                 grid-template-columns: 1fr;
-                max-width: 400px;
+                max-width: 450px;
                 margin: 0 auto;
             }
             .footer-container {
@@ -730,9 +853,6 @@
             .social-links {
                 justify-content: center;
             }
-            .section-title {
-                font-size: 2rem;
-            }
             .btn-group {
                 flex-direction: column;
                 align-items: center;
@@ -740,14 +860,17 @@
             .btn {
                 width: 100%;
                 justify-content: center;
-                max-width: 320px;
+                max-width: 300px;
+            }
+            .section-title {
+                font-size: 1.8rem;
             }
             .whatsapp-float {
-                width: 50px;
-                height: 50px;
+                width: 52px;
+                height: 52px;
                 font-size: 1.6rem;
-                bottom: 1.5rem;
-                right: 1.5rem;
+                bottom: 1.2rem;
+                right: 1.2rem;
             }
         }
     </style>
@@ -775,15 +898,15 @@
     </header>
 
     <!-- ============================================================
-    HERO – GRAND FORMAT
+    HERO
     ============================================================ -->
     <section class="hero">
-        <img class="hero-bg" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=2000&q=80" alt="SORA Agency événement premium">
+        <img class="hero-bg" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=2000&q=80" alt="SORA Agency événement premium" loading="eager">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <p class="subtitle">Agence d'accueil événementiel</p>
-            <h1>SORA <span>Agency</span></h1>
-            <p class="tagline">L'excellence de l'accueil pour vos événements professionnels et privés.</p>
+            <span class="badge">Agence d'accueil événementiel</span>
+            <h1>SORA <span class="gold">Agency</span></h1>
+            <p class="tagline">"L'excellence de l'accueil pour vos événements professionnels et privés."</p>
             <p class="services-tag">
                 Hôtesses <span>•</span> Accueil VIP <span>•</span> Conférences <span>•</span> Salons <span>•</span> Événements corporatifs
             </p>
@@ -795,68 +918,111 @@
     </section>
 
     <!-- ============================================================
-    RÉALISATIONS – PREUVES VISUELLES (après la bannière)
+    RÉALISATIONS – AVEC TEXTE ET LIENS VERS PAGES DÉDIÉES
     ============================================================ -->
     <section class="section">
         <h2 class="section-title reveal">Nos <span class="gold">réalisations</span></h2>
         <div class="section-divider"></div>
-        <p class="section-subtitle reveal">Des événements d'exception, des hôtesses d'excellence, des moments uniques.</p>
+        <p class="section-subtitle reveal">Des événements d'exception, des hôtesses d'élite, des moments uniques.</p>
+        
         <div class="gallery-grid">
-            <div class="gallery-item reveal">
-                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Conférence d'affaires">
-                <div class="overlay"><h3>Conférence d'affaires</h3><p>Paris, 2024</p></div>
-            </div>
-            <div class="gallery-item reveal">
-                <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80" alt="Gala de prestige">
-                <div class="overlay"><h3>Gala de prestige</h3><p>Cannes, 2024</p></div>
-            </div>
-            <div class="gallery-item reveal">
-                <img src="https://images.unsplash.com/photo-1540317580384-e5d43867caa6?auto=format&fit=crop&w=800&q=80" alt="Accueil VIP">
-                <div class="overlay"><h3>Accueil VIP</h3><p>Monaco, 2024</p></div>
-            </div>
-            <div class="gallery-item reveal">
-                <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80" alt="Salon professionnel">
-                <div class="overlay"><h3>Salon professionnel</h3><p>Lyon, 2024</p></div>
-            </div>
-            <div class="gallery-item reveal">
-                <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=800&q=80" alt="Cérémonie d'entreprise">
-                <div class="overlay"><h3>Cérémonie d'entreprise</h3><p>Bordeaux, 2024</p></div>
-            </div>
-            <div class="gallery-item reveal">
-                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80" alt="Équipe SORA">
-                <div class="overlay"><h3>Notre équipe</h3><p>Des hôtesses d'exception</p></div>
-            </div>
+            <!-- Événement 1 -->
+            <a href="gallery.html#event1" class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Conférence internationale d'affaires à Paris">
+                <div class="overlay">
+                    <span class="category">Conférence</span>
+                    <h3>Sommet International des Affaires</h3>
+                    <p>Paris, 2024 · 1 200 participants</p>
+                    <span class="read-more">Voir l'événement <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- Événement 2 -->
+            <a href="gallery.html#event2" class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80" alt="Gala de prestige à Cannes">
+                <div class="overlay">
+                    <span class="category">Gala</span>
+                    <h3>Gala de Bienfaisance</h3>
+                    <p>Cannes, 2024 · 450 invités VIP</p>
+                    <span class="read-more">Voir l'événement <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- Événement 3 -->
+            <a href="gallery.html#event3" class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1540317580384-e5d43867caa6?auto=format&fit=crop&w=800&q=80" alt="Accueil VIP pour une marque de luxe à Monaco">
+                <div class="overlay">
+                    <span class="category">Accueil VIP</span>
+                    <h3>Lancement de collection privée</h3>
+                    <p>Monaco, 2024 · 80 personnalités</p>
+                    <span class="read-more">Voir l'événement <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- Événement 4 -->
+            <a href="gallery.html#event4" class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80" alt="Salon professionnel à Lyon">
+                <div class="overlay">
+                    <span class="category">Salon</span>
+                    <h3>Salon International de l'Innovation</h3>
+                    <p>Lyon, 2024 · 5 000 visiteurs</p>
+                    <span class="read-more">Voir l'événement <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- Événement 5 -->
+            <a href="gallery.html#event5" class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=800&q=80" alt="Cérémonie d'entreprise à Bordeaux">
+                <div class="overlay">
+                    <span class="category">Cérémonie</span>
+                    <h3>Remise des prix d'excellence</h3>
+                    <p>Bordeaux, 2024 · 300 convives</p>
+                    <span class="read-more">Voir l'événement <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- Événement 6 -->
+            <a href="gallery.html#event6" class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80" alt="L'équipe SORA en action">
+                <div class="overlay">
+                    <span class="category">Notre équipe</span>
+                    <h3>Les Hôtesses SORA</h3>
+                    <p>Des professionnelles d'exception</p>
+                    <span class="read-more">Découvrir l'équipe <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
         </div>
     </section>
 
     <!-- ============================================================
-    SERVICES – CARTES ÉLÉGANTES
+    SERVICES
     ============================================================ -->
-    <section class="section" style="background: white;">
+    <section class="section section-light">
         <h2 class="section-title reveal">Nos <span class="gold">services</span></h2>
         <div class="section-divider"></div>
-        <p class="section-subtitle reveal">Des prestations sur mesure, conçues pour sublimer votre événement.</p>
+        <p class="section-subtitle reveal">Des prestations sur mesure, conçues pour sublimer chaque événement.</p>
+        
         <div class="services-grid">
-            <div class="service-card reveal">
+            <a href="services.html#event" class="service-card reveal">
                 <div class="service-icon">🎯</div>
                 <h3>Accueil Événementiel</h3>
-                <p>Mariages, conférences, salons, cérémonies et événements privés.</p>
-            </div>
-            <div class="service-card reveal">
+                <p>Mariages, conférences, salons, cérémonies et soirées privées.</p>
+            </a>
+            <a href="services.html#hostesses" class="service-card reveal">
                 <div class="service-icon">👩‍💼</div>
-                <h3>Hôtesses Professionnelles</h3>
-                <p>Personnel qualifié, formé et élégant pour représenter votre image.</p>
-            </div>
-            <div class="service-card reveal">
+                <h3>Hôtesses d'Excellence</h3>
+                <p>Personnel qualifié, formé aux codes du luxe et aux langues.</p>
+            </a>
+            <a href="services.html#vip" class="service-card reveal">
                 <div class="service-icon">👑</div>
                 <h3>Accompagnement VIP</h3>
-                <p>Prise en charge de personnalités et invités de marque.</p>
-            </div>
-            <div class="service-card reveal">
+                <p>Prise en charge personnalisée de vos invités de marque.</p>
+            </a>
+            <a href="services.html#marketing" class="service-card reveal">
                 <div class="service-icon">📢</div>
                 <h3>Street Marketing</h3>
                 <p>Promotion de marques et produits sur le terrain.</p>
-            </div>
+            </a>
         </div>
     </section>
 
@@ -866,24 +1032,25 @@
     <section class="section">
         <h2 class="section-title reveal">Ce qu'ils disent de <span class="gold">SORA</span></h2>
         <div class="section-divider"></div>
+        
         <div class="testimonials-grid">
             <div class="testimonial-card reveal">
                 <div class="stars">★★★★★</div>
-                <blockquote>"Une équipe exceptionnelle, d'une élégance rare. Nos invités ont été enchantés."</blockquote>
+                <blockquote>"Une équipe exceptionnelle, d'une élégance rare. Nos invités ont été enchantés par la qualité de l'accueil."</blockquote>
                 <div class="author">Sophie Dubois</div>
-                <div class="role">Directrice événementielle, Groupe Accor</div>
+                <div class="role">Directrice événementielle — Groupe Accor</div>
             </div>
             <div class="testimonial-card reveal">
                 <div class="stars">★★★★★</div>
-                <blockquote>"Des hôtesses d'une discrétion et d'un professionnalisme remarquables."</blockquote>
+                <blockquote>"Des hôtesses d'une discrétion et d'un professionnalisme remarquables. SORA est devenue notre partenaire privilégié."</blockquote>
                 <div class="author">Jean-Pierre Martin</div>
-                <div class="role">CEO, Maison Cartier</div>
+                <div class="role">CEO — Maison Cartier</div>
             </div>
             <div class="testimonial-card reveal">
                 <div class="stars">★★★★★</div>
-                <blockquote>"SORA a été le partenaire idéal pour notre congrès international."</blockquote>
+                <blockquote>"SORA a su dépasser nos attentes pour notre congrès international. Une agence à recommander sans hésitation."</blockquote>
                 <div class="author">Marie-Claire Leblanc</div>
-                <div class="role">Relations publiques, Groupe LVMH</div>
+                <div class="role">Relations publiques — Groupe LVMH</div>
             </div>
         </div>
     </section>
@@ -892,7 +1059,7 @@
     CTA
     ============================================================ -->
     <section class="cta-section">
-        <h2 class="reveal">Un événement d'exception mérite <span style="color: var(--gold);">SORA</span></h2>
+        <h2 class="reveal">Un événement d'exception mérite <span class="gold">SORA</span></h2>
         <p class="reveal">Contactez-nous pour un devis personnalisé en 24h.</p>
         <div class="btn-group reveal">
             <a href="quote.html" class="btn">Demander un devis</a>
@@ -907,7 +1074,7 @@
         <div class="footer-container">
             <div class="footer-col">
                 <div class="logo-footer">SORA</div>
-                <p style="margin-top: 0.8rem;">L'excellence de l'accueil événementiel.</p>
+                <p class="desc">L'excellence de l'accueil événementiel.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -922,15 +1089,17 @@
                     <li><a href="about.html">À propos</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="gallery.html">Réalisations</a></li>
+                    <li><a href="testimonials.html">Témoignages</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="services.html">Accueil événementiel</a></li>
-                    <li><a href="services.html">Hôtesses d'excellence</a></li>
-                    <li><a href="services.html">Accompagnement VIP</a></li>
-                    <li><a href="services.html">Street marketing</a></li>
+                    <li><a href="services.html#event">Accueil événementiel</a></li>
+                    <li><a href="services.html#hostesses">Hôtesses d'excellence</a></li>
+                    <li><a href="services.html#vip">Accompagnement VIP</a></li>
+                    <li><a href="services.html#marketing">Street marketing</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -941,12 +1110,12 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 SORA Agency — Tous droits réservés.</p>
+            <p>© 2026 SORA Agency — Tous droits réservés. Agence d'accueil certifiée.</p>
         </div>
     </footer>
 
     <!-- ============================================================
-    WHATSAPP FLOTTANT (visible partout)
+    WHATSAPP FLOTTANT
     ============================================================ -->
     <a href="#" class="whatsapp-float" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
@@ -983,22 +1152,38 @@
             });
         };
 
-        window.addEventListener('scroll', checkReveal);
+        window.addEventListener('scroll', checkReveal, { passive: true });
         window.addEventListener('load', checkReveal);
+        window.addEventListener('resize', checkReveal, { passive: true });
 
         // ============================================================
         // HEADER SCROLL EFFET
         // ============================================================
         const header = document.querySelector('header');
+        let lastScroll = 0;
+
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
+            const currentScroll = window.scrollY;
+            if (currentScroll > 60) {
                 header.style.background = "rgba(10,10,10,0.98)";
-                header.style.padding = "1rem 6%";
+                header.style.padding = "0.9rem 6%";
             } else {
-                header.style.background = "rgba(10,10,10,0.92)";
-                header.style.padding = "1.6rem 6%";
+                header.style.background = "rgba(10,10,10,0.94)";
+                header.style.padding = "1.4rem 6%";
             }
-        });
+            lastScroll = currentScroll;
+        }, { passive: true });
+
+        // ============================================================
+        // PARALLAX LÉGER SUR L'HERO (effet premium)
+        // ============================================================
+        const heroBg = document.querySelector('.hero-bg');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            if (scrolled < window.innerHeight) {
+                heroBg.style.transform = `scale(1.04) translateY(${scrolled * 0.05}px)`;
+            }
+        }, { passive: true });
     </script>
 
 </body>
