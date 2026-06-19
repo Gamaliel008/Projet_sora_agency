@@ -1,61 +1,532 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Réalisations | SORA Agency</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{background:#F8F8F6;color:#1E1E1E;font-family:'Inter',sans-serif;overflow-x:hidden;}
-:root{--gold:#C6A43F;--gold-dark:#A8882E;}
-h1,h2,h3,.logo{font-family:'Playfair Display',serif;font-weight:600;}
-header{position:fixed;top:0;left:0;width:100%;padding:1.2rem 6%;background:rgba(10,10,10,.92);backdrop-filter:blur(14px);display:flex;justify-content:space-between;align-items:center;z-index:1000;transition:0.3s;border-bottom:1px solid rgba(198,164,63,.25);}
-.logo{font-size:2rem;background:linear-gradient(135deg,#E0C26A,#C6A43F);-webkit-background-clip:text;background-clip:text;color:transparent;}
-nav ul{display:flex;list-style:none;gap:2rem;}
-nav a{text-decoration:none;color:white;font-weight:500;transition:.3s;position:relative;}
-nav a::after{content:'';position:absolute;bottom:-6px;left:0;width:0%;height:2px;background:var(--gold);transition:0.3s;}
-nav a:hover::after,nav a.active::after{width:100%;}
-nav a:hover,nav a.active{color:var(--gold);}
-.hero{height:50vh;background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:white;margin-top:80px;}
-.hero h1{font-size:4rem;}
-.section{padding:5rem 6%;}
-.section-title{text-align:center;font-size:2.8rem;margin-bottom:3rem;}
-.section-title span{background:linear-gradient(120deg,var(--gold),var(--gold-dark));-webkit-background-clip:text;background-clip:text;color:transparent;}
-.title-decoration{width:70px;height:3px;background:var(--gold);margin:0.6rem auto 0;border-radius:4px;}
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;}
-.gallery-item{position:relative;border-radius:28px;overflow:hidden;box-shadow:0 12px 25px rgba(0,0,0,.1);cursor:pointer;transition:0.4s;}
-.gallery-item:hover{transform:translateY(-8px);}
-.gallery-item img{width:100%;height:300px;object-fit:cover;transition:0.5s;}
-.gallery-item:hover img{transform:scale(1.05);}
-.gallery-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.8));color:white;padding:20px;text-align:center;transform:translateY(100%);transition:0.3s;}
-.gallery-item:hover .gallery-overlay{transform:translateY(0);}
-footer{background:#0A0A0A;color:#E0E0E0;padding:3rem 6% 2rem;border-top:2px solid rgba(198,164,63,.3);}
-.footer-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-bottom:2rem;}
-.footer-col h4{color:var(--gold);font-size:1.2rem;margin-bottom:1rem;font-family:'Playfair Display',serif;}
-.footer-col p,.footer-col ul li a{font-size:0.9rem;color:#B0B0B0;text-decoration:none;}
-.footer-col ul{list-style:none;}
-.footer-col ul li{margin-bottom:0.6rem;}
-.footer-col ul li a:hover{color:var(--gold);}
-.social-links{display:flex;gap:1.2rem;margin-top:1rem;}
-.social-links a{color:#B0B0B0;font-size:1.3rem;transition:0.3s;}
-.social-links a:hover{color:var(--gold);transform:translateY(-3px);}
-.footer-bottom{text-align:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);font-size:0.8rem;color:#7A7A7A;}
-.menu-btn{display:none;font-size:1.8rem;color:white;cursor:pointer;}
-.reveal{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease;}
-.reveal.active{opacity:1;transform:translateY(0);}
-@media(max-width:850px){.hero h1{font-size:2.5rem;}.section-title{font-size:2rem;}.menu-btn{display:block;}nav{display:none;position:absolute;top:75px;left:0;width:100%;background:rgba(10,10,10,.98);backdrop-filter:blur(12px);padding:1.5rem;border-radius:0 0 24px 24px;}nav.active{display:block;}nav ul{flex-direction:column;align-items:center;gap:1rem;}.footer-container{grid-template-columns:1fr;text-align:center;}.social-links{justify-content:center;}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réalisations | SORA Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --gold: #C6A43F;
+            --gold-dark: #A8882E;
+            --gold-light: #E0C26A;
+            --black: #0A0A0A;
+            --dark: #121212;
+            --white: #FFFFFF;
+            --gray-bg: #F8F8F6;
+            --gray-text: #888888;
+            --shadow-sm: 0 4px 20px rgba(0,0,0,0.04);
+            --shadow-md: 0 20px 40px -16px rgba(0,0,0,0.15);
+            --transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-smooth: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        body {
+            background: var(--gray-bg);
+            color: var(--black);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4, .logo { font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; font-weight: 600; letter-spacing: -0.02em; }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.2rem 6%;
+            background: rgba(10, 10, 10, 0.94);
+            backdrop-filter: blur(18px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(198, 164, 63, 0.12);
+        }
+        .logo { font-size: 1.8rem; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; text-decoration: none; }
+        .logo:hover { color: var(--gold-light); }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 400;
+            font-size: 0.78rem;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            transition: var(--transition);
+            position: relative;
+            font-family: 'Inter', sans-serif;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0%;
+            height: 1.5px;
+            background: var(--gold);
+            transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        nav a:hover::after, nav a.active::after { width: 100%; }
+        nav a:hover, nav a.active { color: var(--gold); }
+
+        .btn-whatsapp-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #25D366;
+            color: white !important;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: 0.3px;
+            transition: var(--transition);
+        }
+        .btn-whatsapp-header::after { display: none; }
+        .btn-whatsapp-header:hover {
+            background: #20b85a;
+            color: white !important;
+            transform: scale(1.05);
+        }
+        .btn-whatsapp-header i { font-size: 1rem; }
+
+        .menu-btn {
+            display: none;
+            font-size: 1.6rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.2rem;
+        }
+
+        /* HERO PAGE */
+        .page-hero {
+            padding: 10rem 6% 4rem;
+            background: var(--black);
+            color: white;
+        }
+        .page-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .page-hero h1 .gold { color: var(--gold); }
+        .page-hero p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: rgba(255,255,255,0.5);
+            max-width: 600px;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 5rem 6%;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.6rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--black);
+            letter-spacing: -1px;
+        }
+        .section-title .gold { color: var(--gold); }
+        .section-subtitle {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--gray-text);
+            max-width: 580px;
+            margin: 0 auto 3.5rem;
+            line-height: 1.8;
+        }
+        .section-divider {
+            width: 50px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto 2.5rem;
+        }
+
+        /* GALLERY GRID - 3 colonnes */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .gallery-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-smooth);
+        }
+        .gallery-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+        .gallery-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+        .gallery-card .content {
+            padding: 1.5rem;
+        }
+        .gallery-card .content .category {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+        }
+        .gallery-card .content h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        .gallery-card .content p {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+        .gallery-card .content .date {
+            font-size: 0.7rem;
+            color: var(--gray-text);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--black);
+            color: rgba(255,255,255,0.4);
+            padding: 3.5rem 6% 2rem;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+        .footer-col h4 {
+            font-family: 'Inter', sans-serif;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 1.2rem;
+        }
+        .footer-col p, .footer-col ul li a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.35);
+            text-decoration: none;
+            line-height: 2.2;
+            transition: var(--transition);
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li a:hover { color: var(--gold); }
+        .footer-col .logo-footer {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+        .footer-col .desc {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            line-height: 1.8;
+        }
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+        }
+        .social-links a {
+            color: rgba(255,255,255,0.25);
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        .social-links a:hover {
+            color: var(--gold);
+            transform: translateY(-3px);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2.5rem;
+            margin-top: 2.5rem;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.2);
+            letter-spacing: 0.5px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 8px 35px rgba(37, 211, 102, 0.35);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.08) rotate(-5deg);
+            box-shadow: 0 12px 45px rgba(37, 211, 102, 0.5);
+            color: white;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1024px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 850px) {
+            .page-hero h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2.2rem; }
+            .menu-btn { display: block; }
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(10,10,10,0.98);
+                backdrop-filter: blur(12px);
+                padding: 2rem;
+                border-radius: 0 0 24px 24px;
+            }
+            nav.active { display: block; }
+            nav ul { flex-direction: column; gap: 1.4rem; align-items: center; }
+            .btn-whatsapp-header { display: none; }
+            .footer-container { grid-template-columns: 1fr 1fr; gap: 2rem; }
+            .section { padding: 4rem 5%; }
+        }
+        @media (max-width: 600px) {
+            .gallery-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
+            .footer-container { grid-template-columns: 1fr; text-align: center; }
+            .social-links { justify-content: center; }
+            .section-title { font-size: 1.8rem; }
+            .whatsapp-float { width: 52px; height: 52px; font-size: 1.6rem; bottom: 1.2rem; right: 1.2rem; }
+        }
+    </style>
 </head>
 <body>
-<header><div class="logo">SORA</div><div class="menu-btn" onclick="toggleMenu()">☰</div><nav id="menu"><ul><li><a href="index.html">Accueil</a></li><li><a href="about.html">À propos</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html" class="active">Réalisations</a></li><li><a href="quote.html">Devis</a></li><li><a href="jobs.html">Recrutement</a></li><li><a href="contact.html">Contact</a></li></ul></nav></header>
-<section class="hero"><h1>Nos Réalisations</h1></section>
-<section class="section"><h2 class="section-title reveal"><span>Ils nous ont fait confiance</span><div class="title-decoration"></div></h2><div class="gallery-grid"><div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80"><div class="gallery-overlay">Salon International de Paris</div></div><div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80"><div class="gallery-overlay">Gala de Bienfaisance</div></div><div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80"><div class="gallery-overlay">Launch Party Premium</div></div><div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=800&q=80"><div class="gallery-overlay">Conférence Internationale</div></div><div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1540317580384-e5d43867caa6?auto=format&fit=crop&w=800&q=80"><div class="gallery-overlay">Festival de Cannes</div></div><div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80"><div class="gallery-overlay">Salon de l'Automobile</div></div></div></section>
-<footer><div class="footer-container"><div class="footer-col"><h4>SORA Agency</h4><p>L'excellence de l'accueil événementiel.</p><div class="social-links"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-behance"></i></a></div></div><div class="footer-col"><h4>Liens rapides</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="services.html">Services</a></li><li><a href="jobs.html">Recrutement</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><p>📞 +33 (0)1 23 45 67 89</p><p>✉️ contact@sora-agency.fr</p><p>📍 Paris, France</p></div></div><div class="footer-bottom"><p>© 2026 SORA Agency — Tous droits réservés.</p></div></footer>
-<script>function toggleMenu(){document.getElementById('menu').classList.toggle('active');}
-const reveals=document.querySelectorAll('.reveal');const checkScroll=()=>{reveals.forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight-80)el.classList.add('active');});};window.addEventListener('scroll',checkScroll);window.addEventListener('load',checkScroll);
-let header=document.querySelector('header');window.addEventListener('scroll',()=>{if(window.scrollY>50){header.style.background="rgba(10,10,10,.97)";header.style.padding="0.9rem 6%";}else{header.style.background="rgba(10,10,10,.92)";header.style.padding="1.2rem 6%";}});</script>
+
+    <header>
+        <a href="index.html" class="logo">SORA</a>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html" class="active">Réalisations</a></li>
+                <li><a href="testimonials.html">Témoignages</a></li>
+                <li><a href="quote.html">Devis</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" class="btn-whatsapp-header"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <h1>Nos <span class="gold">réalisations</span></h1>
+        <p>Des événements d'exception, des hôtesses d'élite, des moments uniques.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title reveal">Ils nous ont <span class="gold">fait confiance</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle reveal">Découvrez une sélection de nos prestations les plus marquantes.</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-card reveal" id="event1">
+                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Conférence">
+                <div class="content">
+                    <span class="category">Conférence</span>
+                    <h3>Sommet International des Affaires</h3>
+                    <p>Accueil d'exception pour 1 200 participants venus du monde entier.</p>
+                    <span class="date">12 Novembre 2024</span>
+                </div>
+            </div>
+
+            <div class="gallery-card reveal" id="event2">
+                <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80" alt="Gala">
+                <div class="content">
+                    <span class="category">Gala</span>
+                    <h3>Gala de Bienfaisance à Cannes</h3>
+                    <p>450 invités VIP accompagnés par nos hôtesses d'excellence.</p>
+                    <span class="date">8 Novembre 2024</span>
+                </div>
+            </div>
+
+            <div class="gallery-card reveal" id="event3">
+                <img src="https://images.unsplash.com/photo-1540317580384-e5d43867caa6?auto=format&fit=crop&w=800&q=80" alt="Accueil VIP">
+                <div class="content">
+                    <span class="category">Accueil VIP</span>
+                    <h3>Lancement de collection privée à Monaco</h3>
+                    <p>Service white glove pour 80 personnalités du monde du luxe.</p>
+                    <span class="date">5 Novembre 2024</span>
+                </div>
+            </div>
+
+            <div class="gallery-card reveal" id="event4">
+                <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80" alt="Salon">
+                <div class="content">
+                    <span class="category">Salon</span>
+                    <h3>Salon International de l'Innovation</h3>
+                    <p>5 000 visiteurs accueillis sur 3 jours à Lyon.</p>
+                    <span class="date">20 Octobre 2024</span>
+                </div>
+            </div>
+
+            <div class="gallery-card reveal" id="event5">
+                <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=800&q=80" alt="Cérémonie">
+                <div class="content">
+                    <span class="category">Cérémonie</span>
+                    <h3>Remise des Prix d'Excellence</h3>
+                    <p>300 convives pour une soirée de prestige à Bordeaux.</p>
+                    <span class="date">15 Octobre 2024</span>
+                </div>
+            </div>
+
+            <div class="gallery-card reveal" id="event6">
+                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80" alt="Équipe SORA">
+                <div class="content">
+                    <span class="category">Notre Équipe</span>
+                    <h3>Les Hôtesses SORA</h3>
+                    <p>Des professionnelles d'exception formées aux codes du luxe.</p>
+                    <span class="date">2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="logo-footer">SORA</div>
+                <p class="desc">Votre agence d'accueil événementiel indépendante pour la France et l'international. Élégance et professionnalisme au cœur de notre mission.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation Rapide</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#event">Accueil événementiel</a></li>
+                    <li><a href="services.html#hostesses">Hôtesses d'excellence</a></li>
+                    <li><a href="services.html#vip">Accompagnement VIP</a></li>
+                    <li><a href="services.html#marketing">Street marketing</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>📞 +33 (0)1 23 45 67 89</p>
+                <p>✉️ contact@sora-agency.fr</p>
+                <p>📍 Paris, France</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 SORA Agency — Tous droits réservés. Agence d'accueil certifiée.</p>
+        </div>
+    </footer>
+
+    <a href="#" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('active');
+        }
+        document.querySelectorAll('#menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu').classList.remove('active');
+            });
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const checkReveal = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < windowHeight - 80) {
+                    el.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', checkReveal, { passive: true });
+        window.addEventListener('load', checkReveal);
+        window.addEventListener('resize', checkReveal, { passive: true });
+
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 60) {
+                header.style.background = "rgba(10,10,10,0.98)";
+                header.style.padding = "0.9rem 6%";
+            } else {
+                header.style.background = "rgba(10,10,10,0.94)";
+                header.style.padding = "1.2rem 6%";
+            }
+        }, { passive: true });
+    </script>
 </body>
 </html>
