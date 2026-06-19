@@ -14,7 +14,7 @@
     
     <style>
         /* ============================================================
-                   RESET & VARIABLES
+                   RESET & VARIABLES – identiques à Mwangeji
                    ============================================================ */
         * {
             margin: 0;
@@ -57,7 +57,7 @@
         }
 
         /* ============================================================
-                   HEADER – ÉPURÉ ET LUXUEUX
+                   HEADER – identique à Mwangeji (fixe, transparent)
                    ============================================================ */
         header {
             position: fixed;
@@ -169,12 +169,81 @@
         }
 
         /* ============================================================
-                   HERO – GRAND FORMAT AVEC TYPOGRAPHIE RAFFINÉE
+                   BANDEAU "EN DIRECT" – comme Mwangeji
+                   ============================================================ */
+        .live-ticker {
+            background: var(--black);
+            color: white;
+            padding: 0.6rem 6%;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(198, 164, 63, 0.15);
+            margin-top: 75px;
+            position: relative;
+            z-index: 50;
+        }
+
+        .live-ticker .label {
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .live-ticker .label .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #E74C3C;
+            border-radius: 50%;
+            animation: pulse-dot 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.7); }
+        }
+
+        .live-ticker .ticker-content {
+            display: flex;
+            gap: 2.5rem;
+            overflow: hidden;
+            white-space: nowrap;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            animation: tickerScroll 30s linear infinite;
+        }
+
+        .live-ticker .ticker-content span {
+            display: inline-block;
+        }
+
+        .live-ticker .ticker-content .highlight {
+            color: var(--gold-light);
+        }
+
+        @keyframes tickerScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ============================================================
+                   HERO – grand format avec badge "Agence d'accueil"
                    ============================================================ */
         .hero {
             position: relative;
-            height: 100vh;
-            min-height: 760px;
+            height: calc(100vh - 75px);
+            min-height: 680px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -206,7 +275,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.75) 100%);
+            background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.75) 100%);
             z-index: 1;
         }
 
@@ -241,7 +310,7 @@
             font-size: 5rem;
             font-weight: 700;
             color: white;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             line-height: 1.08;
             letter-spacing: -2px;
         }
@@ -332,10 +401,10 @@
         }
 
         /* ============================================================
-                   SECTIONS – AÉRATION ET TYPOGRAPHIE
+                   SECTIONS – structure identique à Mwangeji
                    ============================================================ */
         .section {
-            padding: 7rem 6%;
+            padding: 5rem 6%;
         }
 
         .section-light {
@@ -344,7 +413,7 @@
 
         .section-title {
             text-align: center;
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             font-weight: 600;
             margin-bottom: 0.8rem;
             color: var(--black);
@@ -375,7 +444,7 @@
         }
 
         /* ============================================================
-                   GALERIE – PHOTOS AVEC TEXTE + LIENS
+                   GALERIE – grille 3 colonnes (comme Mwangeji)
                    ============================================================ */
         .gallery-grid {
             display: grid;
@@ -478,7 +547,7 @@
         }
 
         /* ============================================================
-                   SERVICES – CARTES AVEC ICÔNES
+                   SERVICES – grille 4 colonnes (comme Mwangeji)
                    ============================================================ */
         .services-grid {
             display: grid;
@@ -527,7 +596,7 @@
         }
 
         /* ============================================================
-                   TÉMOIGNAGES
+                   TÉMOIGNAGES – comme Mwangeji
                    ============================================================ */
         .testimonials-grid {
             display: grid;
@@ -574,7 +643,7 @@
         }
 
         /* ============================================================
-                   CTA
+                   CTA – comme Mwangeji
                    ============================================================ */
         .cta-section {
             background: var(--black);
@@ -626,7 +695,7 @@
         }
 
         /* ============================================================
-                   FOOTER
+                   FOOTER – comme Mwangeji
                    ============================================================ */
         footer {
             background: var(--black);
@@ -715,7 +784,7 @@
         }
 
         /* ============================================================
-                   WHATSAPP FLOTTANT
+                   WHATSAPP FLOTTANT (visible partout)
                    ============================================================ */
         .whatsapp-float {
             position: fixed;
@@ -743,7 +812,7 @@
         }
 
         /* ============================================================
-                   REVEAL
+                   REVEAL – animation légère
                    ============================================================ */
         .reveal {
             opacity: 0;
@@ -757,7 +826,7 @@
         }
 
         /* ============================================================
-                   RESPONSIVE
+                   RESPONSIVE – strictement comme Mwangeji
                    ============================================================ */
         @media (max-width: 1100px) {
             .gallery-grid {
@@ -812,10 +881,19 @@
                 gap: 2rem;
             }
             .section {
-                padding: 4.5rem 5%;
+                padding: 4rem 5%;
             }
             .cta-section h2 {
                 font-size: 2rem;
+            }
+            .live-ticker {
+                margin-top: 65px;
+                padding: 0.4rem 5%;
+            }
+            .live-ticker .ticker-content {
+                font-size: 0.7rem;
+                gap: 1.5rem;
+                animation-duration: 20s;
             }
         }
 
@@ -872,13 +950,21 @@
                 bottom: 1.2rem;
                 right: 1.2rem;
             }
+            .live-ticker .label {
+                font-size: 0.6rem;
+            }
+            .live-ticker .ticker-content {
+                font-size: 0.6rem;
+                gap: 1rem;
+                animation-duration: 15s;
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- ============================================================
-    HEADER
+    HEADER – identique à Mwangeji
     ============================================================ -->
     <header>
         <a href="index.html" class="logo">SORA</a>
@@ -898,7 +984,26 @@
     </header>
 
     <!-- ============================================================
-    HERO
+    BANDEAU "EN DIRECT" – comme Mwangeji
+    ============================================================ -->
+    <div class="live-ticker">
+        <span class="label"><span class="dot"></span> En direct</span>
+        <div class="ticker-content">
+            <span>🤝 <span class="highlight">Nouveau partenariat</span> avec le groupe hôtelier Accor pour l'accueil VIP •</span>
+            <span>📈 <span class="highlight">+45%</span> de demandes d'accueil événementiel en 2024 •</span>
+            <span>🎓 Lancement de la formation <span class="highlight">"Excellence d'accueil"</span> en janvier 2025 •</span>
+            <span>🌍 Ouverture d'un bureau <span class="highlight">à Dubaï</span> et à Genève •</span>
+            <span>🏆 SORA nommée <span class="highlight">"Meilleure agence d'accueil"</span> aux Event Awards 2024 •</span>
+            <span>🤝 <span class="highlight">Nouveau partenariat</span> avec le groupe hôtelier Accor pour l'accueil VIP •</span>
+            <span>📈 <span class="highlight">+45%</span> de demandes d'accueil événementiel en 2024 •</span>
+            <span>🎓 Lancement de la formation <span class="highlight">"Excellence d'accueil"</span> en janvier 2025 •</span>
+            <span>🌍 Ouverture d'un bureau <span class="highlight">à Dubaï</span> et à Genève •</span>
+            <span>🏆 SORA nommée <span class="highlight">"Meilleure agence d'accueil"</span> aux Event Awards 2024 •</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    HERO – grand format avec badge "Agence d'accueil"
     ============================================================ -->
     <section class="hero">
         <img class="hero-bg" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=2000&q=80" alt="SORA Agency événement premium" loading="eager">
@@ -918,7 +1023,7 @@
     </section>
 
     <!-- ============================================================
-    RÉALISATIONS – AVEC TEXTE ET LIENS VERS PAGES DÉDIÉES
+    RÉALISATIONS – grille 3 colonnes (comme Mwangeji)
     ============================================================ -->
     <section class="section">
         <h2 class="section-title reveal">Nos <span class="gold">réalisations</span></h2>
@@ -995,7 +1100,7 @@
     </section>
 
     <!-- ============================================================
-    SERVICES
+    SERVICES – grille 4 colonnes (comme Mwangeji)
     ============================================================ -->
     <section class="section section-light">
         <h2 class="section-title reveal">Nos <span class="gold">services</span></h2>
@@ -1027,7 +1132,7 @@
     </section>
 
     <!-- ============================================================
-    TÉMOIGNAGES
+    TÉMOIGNAGES – grille 3 colonnes (comme Mwangeji)
     ============================================================ -->
     <section class="section">
         <h2 class="section-title reveal">Ce qu'ils disent de <span class="gold">SORA</span></h2>
@@ -1056,7 +1161,7 @@
     </section>
 
     <!-- ============================================================
-    CTA
+    CTA – comme Mwangeji
     ============================================================ -->
     <section class="cta-section">
         <h2 class="reveal">Un événement d'exception mérite <span class="gold">SORA</span></h2>
@@ -1068,7 +1173,7 @@
     </section>
 
     <!-- ============================================================
-    FOOTER
+    FOOTER – comme Mwangeji
     ============================================================ -->
     <footer>
         <div class="footer-container">
@@ -1115,7 +1220,7 @@
     </footer>
 
     <!-- ============================================================
-    WHATSAPP FLOTTANT
+    WHATSAPP FLOTTANT (visible partout)
     ============================================================ -->
     <a href="#" class="whatsapp-float" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
