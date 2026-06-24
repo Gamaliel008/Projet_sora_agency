@@ -8,19 +8,11 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* ============================================================
-                   RESET & VARIABLES
-                   ============================================================ */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --gold: #C6A43F;
             --gold-dark: #A8882E;
@@ -30,14 +22,11 @@
             --white: #FFFFFF;
             --gray-bg: #F8F8F6;
             --gray-text: #888888;
-            --gray-light: #AAAAAA;
             --shadow-sm: 0 4px 20px rgba(0,0,0,0.04);
             --shadow-md: 0 20px 40px -16px rgba(0,0,0,0.15);
-            --shadow-lg: 0 40px 60px -20px rgba(0,0,0,0.25);
             --transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             --transition-smooth: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
-
         body {
             background: var(--gray-bg);
             color: var(--black);
@@ -46,18 +35,9 @@
             line-height: 1.7;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
+        h1, h2, h3, h4, .logo { font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; font-weight: 600; letter-spacing: -0.02em; }
 
-        h1, h2, h3, h4, .logo {
-            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-        }
-
-        /* ============================================================
-                   HEADER – style Mwangeji (photo 6)
-                   ============================================================ */
         header {
             position: fixed;
             top: 0;
@@ -66,7 +46,6 @@
             padding: 1.2rem 6%;
             background: rgba(10, 10, 10, 0.94);
             backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -74,27 +53,14 @@
             transition: var(--transition);
             border-bottom: 1px solid rgba(198, 164, 63, 0.12);
         }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--gold);
-            letter-spacing: 1.5px;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .logo:hover {
-            color: var(--gold-light);
-        }
-
+        .logo { font-size: 1.8rem; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; text-decoration: none; }
+        .logo:hover { color: var(--gold-light); }
         nav ul {
             display: flex;
             list-style: none;
             gap: 2rem;
             align-items: center;
         }
-
         nav a {
             text-decoration: none;
             color: rgba(255, 255, 255, 0.75);
@@ -106,7 +72,6 @@
             position: relative;
             font-family: 'Inter', sans-serif;
         }
-
         nav a::after {
             content: '';
             position: absolute;
@@ -117,16 +82,8 @@
             background: var(--gold);
             transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
         }
-
-        nav a:hover::after,
-        nav a.active::after {
-            width: 100%;
-        }
-
-        nav a:hover,
-        nav a.active {
-            color: var(--gold);
-        }
+        nav a:hover::after, nav a.active::after { width: 100%; }
+        nav a:hover, nav a.active { color: var(--gold); }
 
         .btn-whatsapp-header {
             display: inline-flex;
@@ -142,20 +99,13 @@
             letter-spacing: 0.3px;
             transition: var(--transition);
         }
-
-        .btn-whatsapp-header::after {
-            display: none;
-        }
-
+        .btn-whatsapp-header::after { display: none; }
         .btn-whatsapp-header:hover {
             background: #20b85a;
             color: white !important;
             transform: scale(1.05);
         }
-
-        .btn-whatsapp-header i {
-            font-size: 1rem;
-        }
+        .btn-whatsapp-header i { font-size: 1rem; }
 
         .menu-btn {
             display: none;
@@ -167,9 +117,6 @@
             padding: 0.2rem;
         }
 
-        /* ============================================================
-                   HERO – sans bandeau "En direct"
-                   ============================================================ */
         .hero {
             position: relative;
             height: 100vh;
@@ -182,7 +129,6 @@
             background: var(--black);
             margin-top: 0;
         }
-
         .hero-bg {
             position: absolute;
             top: 0;
@@ -191,15 +137,11 @@
             height: 100%;
             object-fit: cover;
             z-index: 0;
-            opacity: 0.7;
-            filter: brightness(0.45) contrast(1.1);
+            opacity: 0.6;
+            filter: brightness(0.4) contrast(1.1);
             transition: transform 8s ease;
         }
-
-        .hero:hover .hero-bg {
-            transform: scale(1.04);
-        }
-
+        .hero:hover .hero-bg { transform: scale(1.04); }
         .hero-overlay {
             position: absolute;
             top: 0;
@@ -209,7 +151,6 @@
             background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.75) 100%);
             z-index: 1;
         }
-
         .hero-content {
             position: relative;
             z-index: 2;
@@ -217,12 +158,10 @@
             padding: 0 2rem;
             animation: fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
-
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         .hero-content .badge {
             display: inline-block;
             font-family: 'Inter', sans-serif;
@@ -236,7 +175,6 @@
             border-radius: 40px;
             margin-bottom: 1.8rem;
         }
-
         .hero-content h1 {
             font-size: 5rem;
             font-weight: 700;
@@ -245,14 +183,12 @@
             line-height: 1.08;
             letter-spacing: -2px;
         }
-
         .hero-content h1 .gold {
             background: linear-gradient(135deg, var(--gold-light), var(--gold));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-
         .hero-content .tagline {
             font-family: 'Playfair Display', serif;
             font-size: 1.3rem;
@@ -261,7 +197,6 @@
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 1.2rem;
         }
-
         .hero-content .services-tag {
             font-family: 'Inter', sans-serif;
             font-size: 0.8rem;
@@ -271,19 +206,16 @@
             text-transform: uppercase;
             margin-bottom: 2.4rem;
         }
-
         .hero-content .services-tag span {
             color: var(--gold);
             margin: 0 0.6rem;
         }
-
         .btn-group {
             display: flex;
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
         }
-
         .btn {
             display: inline-flex;
             align-items: center;
@@ -301,47 +233,33 @@
             border: none;
             cursor: pointer;
         }
-
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 16px 35px -10px rgba(198, 164, 63, 0.45);
             background: var(--gold-light);
         }
-
         .btn-outline {
             background: transparent;
             border: 1px solid rgba(255, 255, 255, 0.25);
             color: white;
         }
-
         .btn-outline:hover {
             background: rgba(255, 255, 255, 0.08);
             border-color: var(--gold);
             color: var(--gold);
         }
-
         .btn-whatsapp {
             background: #25D366;
             color: white !important;
         }
-
         .btn-whatsapp:hover {
             background: #20b85a;
             box-shadow: 0 16px 35px -10px rgba(37, 211, 102, 0.4);
             color: white !important;
         }
 
-        /* ============================================================
-                   SECTIONS
-                   ============================================================ */
-        .section {
-            padding: 5rem 6%;
-        }
-
-        .section-light {
-            background: white;
-        }
-
+        .section { padding: 5rem 6%; }
+        .section-light { background: white; }
         .section-title {
             text-align: center;
             font-size: 2.6rem;
@@ -350,11 +268,7 @@
             color: var(--black);
             letter-spacing: -1px;
         }
-
-        .section-title .gold {
-            color: var(--gold);
-        }
-
+        .section-title .gold { color: var(--gold); }
         .section-subtitle {
             text-align: center;
             font-family: 'Playfair Display', serif;
@@ -366,7 +280,6 @@
             margin: 0 auto 3.5rem;
             line-height: 1.8;
         }
-
         .section-divider {
             width: 50px;
             height: 2px;
@@ -374,15 +287,11 @@
             margin: 0 auto 2.5rem;
         }
 
-        /* ============================================================
-                   RÉALISATIONS – style photo 1 "Mines & Économie"
-                   ============================================================ */
         .realisations-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
-
         .realisation-card {
             background: white;
             border-radius: 12px;
@@ -393,22 +302,16 @@
             color: inherit;
             display: block;
         }
-
         .realisation-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-md);
         }
-
         .realisation-card img {
             width: 100%;
-            height: 220px;
+            height: 260px;
             object-fit: cover;
         }
-
-        .realisation-card .content {
-            padding: 1.5rem;
-        }
-
+        .realisation-card .content { padding: 1.5rem; }
         .realisation-card .category {
             display: inline-block;
             font-family: 'Inter', sans-serif;
@@ -417,34 +320,22 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--gold);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
         }
-
-        .realisation-card .read-time {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.7rem;
-            font-weight: 300;
-            color: var(--gray-text);
-            margin-bottom: 0.5rem;
-        }
-
         .realisation-card h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
             line-height: 1.3;
         }
-
         .realisation-card p {
             font-family: 'Inter', sans-serif;
             font-size: 0.85rem;
             font-weight: 300;
             color: var(--gray-text);
             line-height: 1.6;
-            margin-bottom: 0.8rem;
         }
-
         .realisation-card .meta {
             display: flex;
             justify-content: space-between;
@@ -454,28 +345,21 @@
             color: var(--gray-text);
             border-top: 1px solid rgba(0,0,0,0.05);
             padding-top: 0.8rem;
+            margin-top: 0.8rem;
         }
-
         .realisation-card .meta .read-more {
             color: var(--gold);
             font-weight: 600;
             letter-spacing: 0.5px;
             transition: var(--transition);
         }
+        .realisation-card .meta .read-more:hover { color: var(--gold-dark); }
 
-        .realisation-card .meta .read-more:hover {
-            color: var(--gold-dark);
-        }
-
-        /* ============================================================
-                   SERVICES – style photo 2 "Rubriques Thématiques"
-                   ============================================================ */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
         }
-
         .service-card {
             background: white;
             padding: 2.5rem 2rem;
@@ -488,19 +372,12 @@
             color: inherit;
             display: block;
         }
-
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-md);
             border-color: rgba(198, 164, 63, 0.2);
         }
-
-        .service-icon {
-            font-size: 2.4rem;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
+        .service-icon { font-size: 2.4rem; color: var(--gold); margin-bottom: 1rem; }
         .service-card h3 {
             font-family: 'Inter', sans-serif;
             font-size: 1.1rem;
@@ -508,14 +385,12 @@
             margin-bottom: 0.6rem;
             letter-spacing: 0.3px;
         }
-
         .service-card p {
             font-size: 0.85rem;
             font-weight: 300;
             color: var(--gray-text);
             line-height: 1.7;
         }
-
         .service-card .explore-link {
             display: inline-block;
             margin-top: 0.8rem;
@@ -527,20 +402,13 @@
             color: var(--gold);
             transition: var(--transition);
         }
+        .service-card .explore-link:hover { color: var(--gold-dark); }
 
-        .service-card .explore-link:hover {
-            color: var(--gold-dark);
-        }
-
-        /* ============================================================
-                   TÉMOIGNAGES – style photo 3
-                   ============================================================ */
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
-
         .testimonial-card {
             background: white;
             padding: 2.5rem 2rem;
@@ -548,14 +416,12 @@
             box-shadow: var(--shadow-sm);
             border-left: 3px solid var(--gold);
         }
-
         .testimonial-card .stars {
             color: var(--gold);
             font-size: 0.9rem;
             letter-spacing: 3px;
             margin-bottom: 0.8rem;
         }
-
         .testimonial-card blockquote {
             font-family: 'Playfair Display', serif;
             font-size: 0.95rem;
@@ -564,14 +430,12 @@
             color: #333;
             line-height: 1.8;
         }
-
         .testimonial-card .author {
             margin-top: 1rem;
             font-family: 'Inter', sans-serif;
             font-weight: 600;
             font-size: 0.9rem;
         }
-
         .testimonial-card .role {
             font-family: 'Inter', sans-serif;
             font-size: 0.75rem;
@@ -579,15 +443,11 @@
             color: var(--gray-text);
         }
 
-        /* ============================================================
-                   CONTACT – style photo 4 "Contactez-nous"
-                   ============================================================ */
         .contact-section {
             background: var(--black);
             padding: 5rem 6%;
             color: white;
         }
-
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -595,17 +455,12 @@
             max-width: 1100px;
             margin: 0 auto;
         }
-
         .contact-info h2 {
             font-size: 2.6rem;
             font-weight: 600;
             margin-bottom: 0.8rem;
         }
-
-        .contact-info h2 .gold {
-            color: var(--gold);
-        }
-
+        .contact-info h2 .gold { color: var(--gold); }
         .contact-info .subtitle {
             font-family: 'Playfair Display', serif;
             font-size: 1.1rem;
@@ -615,14 +470,12 @@
             margin-bottom: 2.5rem;
             line-height: 1.8;
         }
-
         .contact-item {
             display: flex;
             align-items: center;
             gap: 1.2rem;
             margin-bottom: 1.5rem;
         }
-
         .contact-item .icon {
             width: 45px;
             height: 45px;
@@ -635,7 +488,6 @@
             font-size: 1.1rem;
             flex-shrink: 0;
         }
-
         .contact-item .label {
             font-size: 0.7rem;
             font-weight: 400;
@@ -643,24 +495,20 @@
             letter-spacing: 1px;
             color: rgba(255,255,255,0.3);
         }
-
         .contact-item .value {
             font-size: 0.95rem;
             color: rgba(255,255,255,0.85);
         }
-
         .contact-social {
             display: flex;
             gap: 1.2rem;
             margin-top: 2rem;
         }
-
         .contact-social a {
             color: rgba(255,255,255,0.3);
             font-size: 1.2rem;
             transition: var(--transition);
         }
-
         .contact-social a:hover {
             color: var(--gold);
             transform: translateY(-3px);
@@ -679,24 +527,18 @@
             transition: var(--transition);
             margin-bottom: 1rem;
         }
-
         .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: rgba(255,255,255,0.3);
-        }
-
+        .contact-form textarea::placeholder { color: rgba(255,255,255,0.3); }
         .contact-form input:focus,
         .contact-form textarea:focus {
             outline: none;
             border-color: var(--gold);
             background: rgba(255,255,255,0.08);
         }
-
         .contact-form textarea {
             min-height: 120px;
             resize: vertical;
         }
-
         .contact-form .btn-submit {
             width: 100%;
             padding: 1rem;
@@ -711,22 +553,55 @@
             cursor: pointer;
             transition: var(--transition);
         }
-
         .contact-form .btn-submit:hover {
             background: var(--gold-light);
             transform: translateY(-2px);
         }
 
-        /* ============================================================
-                   FOOTER – style photo 5 (footer Mwangeji)
-                   ============================================================ */
+        .cta-section {
+            background: var(--black);
+            padding: 5rem 6%;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(198,164,63,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .cta-section h2 {
+            position: relative;
+            z-index: 1;
+            font-size: 2.6rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+        .cta-section h2 .gold { color: var(--gold); }
+        .cta-section p {
+            position: relative;
+            z-index: 1;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            font-style: italic;
+            color: rgba(255,255,255,0.5);
+            max-width: 500px;
+            margin: 0 auto 2.5rem;
+        }
+
         footer {
             background: var(--black);
             color: rgba(255,255,255,0.4);
             padding: 3.5rem 6% 2rem;
             border-top: 1px solid rgba(255,255,255,0.04);
         }
-
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -734,7 +609,6 @@
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 3rem;
         }
-
         .footer-col h4 {
             font-family: 'Inter', sans-serif;
             color: white;
@@ -744,9 +618,7 @@
             letter-spacing: 1.2px;
             margin-bottom: 1.2rem;
         }
-
-        .footer-col p,
-        .footer-col ul li a {
+        .footer-col p, .footer-col ul li a {
             font-family: 'Inter', sans-serif;
             font-size: 0.85rem;
             font-weight: 300;
@@ -755,45 +627,33 @@
             line-height: 2.2;
             transition: var(--transition);
         }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li a:hover {
-            color: var(--gold);
-        }
-
+        .footer-col ul { list-style: none; }
+        .footer-col ul li a:hover { color: var(--gold); }
         .footer-col .logo-footer {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             color: var(--gold);
             font-weight: 700;
         }
-
         .footer-col .desc {
             font-size: 0.85rem;
             margin-top: 0.5rem;
             line-height: 1.8;
         }
-
         .social-links {
             display: flex;
             gap: 1.2rem;
             margin-top: 1.2rem;
         }
-
         .social-links a {
             color: rgba(255,255,255,0.25);
             font-size: 1.1rem;
             transition: var(--transition);
         }
-
         .social-links a:hover {
             color: var(--gold);
             transform: translateY(-3px);
         }
-
         .footer-bottom {
             text-align: center;
             padding-top: 2.5rem;
@@ -806,9 +666,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* ============================================================
-                   WHATSAPP FLOTTANT (visible partout)
-                   ============================================================ */
         .whatsapp-float {
             position: fixed;
             bottom: 2rem;
@@ -827,63 +684,34 @@
             transition: var(--transition);
             text-decoration: none;
         }
-
         .whatsapp-float:hover {
             transform: scale(1.08) rotate(-5deg);
             box-shadow: 0 12px 45px rgba(37, 211, 102, 0.5);
             color: white;
         }
 
-        /* ============================================================
-                   REVEAL
-                   ============================================================ */
         .reveal {
             opacity: 0;
             transform: translateY(35px);
             transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
         }
-
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* ============================================================
-                   RESPONSIVE
-                   ============================================================ */
         @media (max-width: 1100px) {
-            .realisations-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .testimonials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-            }
+            .realisations-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-container { grid-template-columns: 1fr 1fr; gap: 2rem; }
         }
-
         @media (max-width: 850px) {
-            .hero-content h1 {
-                font-size: 3.2rem;
-            }
-            .hero-content .tagline {
-                font-size: 1.1rem;
-            }
-            .section-title {
-                font-size: 2.2rem;
-            }
-            .menu-btn {
-                display: block;
-            }
+            .hero-content h1 { font-size: 3.2rem; }
+            .hero-content .tagline { font-size: 1.1rem; }
+            .section-title { font-size: 2.2rem; }
+            .menu-btn { display: block; }
             nav {
                 display: none;
                 position: absolute;
@@ -896,93 +724,33 @@
                 border-radius: 0 0 24px 24px;
                 border-bottom: 1px solid rgba(198,164,63,0.1);
             }
-            nav.active {
-                display: block;
-            }
-            nav ul {
-                flex-direction: column;
-                gap: 1.4rem;
-                align-items: center;
-            }
-            .btn-whatsapp-header {
-                display: none;
-            }
-            .section {
-                padding: 4rem 5%;
-            }
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-            }
+            nav.active { display: block; }
+            nav ul { flex-direction: column; gap: 1.4rem; align-items: center; }
+            .btn-whatsapp-header { display: none; }
+            .section { padding: 4rem 5%; }
+            .footer-container { grid-template-columns: 1fr 1fr; gap: 2rem; }
+            .cta-section h2 { font-size: 2rem; }
         }
-
         @media (max-width: 600px) {
-            .hero-content h1 {
-                font-size: 2.4rem;
-                letter-spacing: -0.5px;
-            }
-            .hero-content .tagline {
-                font-size: 1rem;
-            }
-            .hero-content .services-tag {
-                font-size: 0.65rem;
-                letter-spacing: 0.8px;
-            }
-            .realisations-grid {
-                grid-template-columns: 1fr;
-                max-width: 450px;
-                margin: 0 auto;
-            }
-            .services-grid {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-                max-width: 450px;
-                margin: 0 auto;
-            }
-            .footer-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .social-links {
-                justify-content: center;
-            }
-            .btn-group {
-                flex-direction: column;
-                align-items: center;
-            }
-            .btn {
-                width: 100%;
-                justify-content: center;
-                max-width: 300px;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
-            .whatsapp-float {
-                width: 52px;
-                height: 52px;
-                font-size: 1.6rem;
-                bottom: 1.2rem;
-                right: 1.2rem;
-            }
-            .contact-info h2 {
-                font-size: 2rem;
-            }
-            .contact-grid {
-                gap: 2rem;
-            }
+            .hero-content h1 { font-size: 2.4rem; letter-spacing: -0.5px; }
+            .hero-content .tagline { font-size: 1rem; }
+            .hero-content .services-tag { font-size: 0.65rem; letter-spacing: 0.8px; }
+            .realisations-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
+            .services-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+            .testimonials-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
+            .footer-container { grid-template-columns: 1fr; text-align: center; }
+            .social-links { justify-content: center; }
+            .btn-group { flex-direction: column; align-items: center; }
+            .btn { width: 100%; justify-content: center; max-width: 300px; }
+            .section-title { font-size: 1.8rem; }
+            .whatsapp-float { width: 52px; height: 52px; font-size: 1.6rem; bottom: 1.2rem; right: 1.2rem; }
+            .contact-info h2 { font-size: 2rem; }
+            .contact-grid { gap: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ============================================================
-    HEADER – style Mwangeji (photo 6)
-    ============================================================ -->
     <header>
         <a href="index.html" class="logo">SORA</a>
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -994,15 +762,13 @@
                 <li><a href="gallery.html">Réalisations</a></li>
                 <li><a href="testimonials.html">Témoignages</a></li>
                 <li><a href="quote.html">Devis</a></li>
+                <li><a href="jobs.html">Recrutement</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="#" class="btn-whatsapp-header"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                <li><a href="https://wa.me/243815851746" target="_blank" class="btn-whatsapp-header"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- ============================================================
-    HERO – sans bandeau "En direct"
-    ============================================================ -->
     <section class="hero">
         <img class="hero-bg" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=2000&q=80" alt="SORA Agency événement premium" loading="eager">
         <div class="hero-overlay"></div>
@@ -1015,107 +781,137 @@
             </p>
             <div class="btn-group">
                 <a href="quote.html" class="btn">Demander un devis</a>
-                <a href="#" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://wa.me/243815851746" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    RÉALISATIONS – style photo 1 "Mines & Économie"
-    ============================================================ -->
+    <!-- ========== RÉALISATIONS ========== -->
     <section class="section">
         <h2 class="section-title reveal">Nos <span class="gold">réalisations</span></h2>
         <div class="section-divider"></div>
-        <p class="section-subtitle reveal">Des événements d'exception, des hôtesses d'élite, des moments uniques.</p>
-        
+        <p class="section-subtitle reveal">Des événements d'exception capturés par <strong>Malken Photography</strong>.</p>
+
         <div class="realisations-grid">
-            <a href="gallery.html#event1" class="realisation-card reveal">
-                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Conférence">
+            <a href="gallery/conference.html" class="realisation-card reveal">
+                <img src="images/IMG_2678.webp" alt="Conférence SORA">
                 <div class="content">
                     <span class="category">Conférence</span>
-                    <span class="read-time">Lecture 8 min</span>
                     <h3>Sommet International des Affaires</h3>
-                    <p>Un accueil d'exception pour 1 200 participants venus du monde entier.</p>
+                    <p>Accueil d'exception pour 1 200 participants à Paris.</p>
                     <div class="meta">
-                        <span>12 Nov 2024</span>
-                        <span class="read-more">Lire l'article →</span>
+                        <span>📅 12 Nov 2024</span>
+                        <span class="read-more">Voir →</span>
                     </div>
                 </div>
             </a>
 
-            <a href="gallery.html#event2" class="realisation-card reveal">
-                <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80" alt="Gala">
+            <a href="gallery/gala.html" class="realisation-card reveal">
+                <img src="images/IMG_2679.webp" alt="Gala SORA">
                 <div class="content">
                     <span class="category">Gala</span>
-                    <span class="read-time">Lecture 6 min</span>
                     <h3>Gala de Bienfaisance à Cannes</h3>
-                    <p>450 invités VIP accompagnés par nos hôtesses d'excellence.</p>
+                    <p>450 invités VIP accompagnés par nos hôtesses.</p>
                     <div class="meta">
-                        <span>8 Nov 2024</span>
-                        <span class="read-more">Lire l'article →</span>
+                        <span>📅 8 Nov 2024</span>
+                        <span class="read-more">Voir →</span>
                     </div>
                 </div>
             </a>
 
-            <a href="gallery.html#event3" class="realisation-card reveal">
-                <img src="https://images.unsplash.com/photo-1540317580384-e5d43867caa6?auto=format&fit=crop&w=800&q=80" alt="Accueil VIP">
+            <a href="gallery/vip-luxury.html" class="realisation-card reveal">
+                <img src="images/IMG_2682.webp" alt="Accueil VIP SORA">
                 <div class="content">
                     <span class="category">Accueil VIP</span>
-                    <span class="read-time">Lecture 5 min</span>
-                    <h3>Lancement de collection privée à Monaco</h3>
-                    <p>Un service white glove pour 80 personnalités du monde du luxe.</p>
+                    <h3>Lancement de collection privée</h3>
+                    <p>Service white glove pour 80 personnalités à Monaco.</p>
                     <div class="meta">
-                        <span>5 Nov 2024</span>
-                        <span class="read-more">Lire l'article →</span>
+                        <span>📅 5 Nov 2024</span>
+                        <span class="read-more">Voir →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="gallery/salon-innovation.html" class="realisation-card reveal">
+                <img src="images/IMG_2683.webp" alt="Salon SORA">
+                <div class="content">
+                    <span class="category">Salon</span>
+                    <h3>Salon International de l'Innovation</h3>
+                    <p>5 000 visiteurs accueillis sur 3 jours à Lyon.</p>
+                    <div class="meta">
+                        <span>📅 20 Oct 2024</span>
+                        <span class="read-more">Voir →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="gallery/ceremony.html" class="realisation-card reveal">
+                <img src="images/IMG_2678.webp" alt="Cérémonie SORA">
+                <div class="content">
+                    <span class="category">Cérémonie</span>
+                    <h3>Remise des Prix d'Excellence</h3>
+                    <p>300 convives pour une soirée de prestige à Bordeaux.</p>
+                    <div class="meta">
+                        <span>📅 15 Oct 2024</span>
+                        <span class="read-more">Voir →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="gallery/team.html" class="realisation-card reveal">
+                <img src="images/IMG_2679.webp" alt="Équipe SORA">
+                <div class="content">
+                    <span class="category">Notre Équipe</span>
+                    <h3>Les Hôtesses SORA</h3>
+                    <p>Des professionnelles d'exception formées aux codes du luxe.</p>
+                    <div class="meta">
+                        <span>📅 2024</span>
+                        <span class="read-more">Voir →</span>
                     </div>
                 </div>
             </a>
         </div>
     </section>
 
-    <!-- ============================================================
-    SERVICES – style photo 2 "Rubriques Thématiques"
-    ============================================================ -->
+    <!-- ========== SERVICES ========== -->
     <section class="section section-light">
         <h2 class="section-title reveal">Nos <span class="gold">services</span></h2>
         <div class="section-divider"></div>
         <p class="section-subtitle reveal">Explorez nos différentes prestations couvrant tous les aspects de l'accueil événementiel.</p>
-        
+
         <div class="services-grid">
-            <a href="services.html#event" class="service-card reveal">
+            <a href="services/event.html" class="service-card reveal">
                 <div class="service-icon">🎯</div>
                 <h3>Accueil Événementiel</h3>
                 <p>Mariages, conférences, salons, cérémonies et soirées privées.</p>
-                <span class="explore-link">Explorer →</span>
+                <span class="explore-link">Découvrir →</span>
             </a>
-            <a href="services.html#hostesses" class="service-card reveal">
+            <a href="services/hostesses.html" class="service-card reveal">
                 <div class="service-icon">👩‍💼</div>
                 <h3>Hôtesses d'Excellence</h3>
                 <p>Personnel qualifié, formé aux codes du luxe et aux langues.</p>
-                <span class="explore-link">Explorer →</span>
+                <span class="explore-link">Découvrir →</span>
             </a>
-            <a href="services.html#vip" class="service-card reveal">
+            <a href="services/vip.html" class="service-card reveal">
                 <div class="service-icon">👑</div>
                 <h3>Accompagnement VIP</h3>
                 <p>Prise en charge personnalisée de vos invités de marque.</p>
-                <span class="explore-link">Explorer →</span>
+                <span class="explore-link">Découvrir →</span>
             </a>
-            <a href="services.html#marketing" class="service-card reveal">
+            <a href="services/marketing.html" class="service-card reveal">
                 <div class="service-icon">📢</div>
                 <h3>Street Marketing</h3>
                 <p>Promotion de marques et produits sur le terrain.</p>
-                <span class="explore-link">Explorer →</span>
+                <span class="explore-link">Découvrir →</span>
             </a>
         </div>
     </section>
 
-    <!-- ============================================================
-    TÉMOIGNAGES – style photo 3
-    ============================================================ -->
+    <!-- ========== TÉMOIGNAGES ========== -->
     <section class="section">
         <h2 class="section-title reveal">Ce qu'ils disent de <span class="gold">SORA</span></h2>
         <div class="section-divider"></div>
-        
+
         <div class="testimonials-grid">
             <div class="testimonial-card reveal">
                 <div class="stars">★★★★★</div>
@@ -1138,15 +934,13 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    CONTACT – style photo 4 "Contactez-nous"
-    ============================================================ -->
+    <!-- ========== CONTACT ========== -->
     <section class="contact-section">
         <div class="contact-grid">
             <div class="contact-info reveal">
                 <h2>Contactez-<span class="gold">nous</span></h2>
                 <p class="subtitle">Vous avez un projet, une suggestion ou souhaitez collaborer avec notre équipe ? N'hésitez pas à nous contacter.</p>
-                
+
                 <div class="contact-item">
                     <div class="icon"><i class="fas fa-envelope"></i></div>
                     <div>
@@ -1154,20 +948,20 @@
                         <div class="value">contact@sora-agency.fr</div>
                     </div>
                 </div>
-                
+
                 <div class="contact-item">
                     <div class="icon"><i class="fas fa-phone"></i></div>
                     <div>
                         <div class="label">Téléphone</div>
-                        <div class="value">+33 (0)1 23 45 67 89</div>
+                        <div class="value">+243 81 585 1746</div>
                     </div>
                 </div>
-                
+
                 <div class="contact-item">
                     <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div>
                         <div class="label">Adresse</div>
-                        <div class="value">12 avenue des Champs-Élysées, 75008 Paris</div>
+                        <div class="value">Kolwezi, Lualaba, RDC</div>
                     </div>
                 </div>
 
@@ -1187,19 +981,27 @@
                     <textarea placeholder="Votre message..." required></textarea>
                     <button type="submit" class="btn-submit">Envoyer le message</button>
                 </form>
-                <div id="formResponse" style="margin-top:1rem;text-align:center;color:var(--gold);"></div>
+                <div id="formResponse" style="margin-top:1rem;text-align:center;color:var(--gold);font-weight:500;"></div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    FOOTER – style photo 5 (footer Mwangeji)
-    ============================================================ -->
+    <!-- ========== CTA ========== -->
+    <section class="cta-section">
+        <h2 class="reveal">Un événement d'exception mérite <span class="gold">SORA</span></h2>
+        <p class="reveal">Contactez-nous pour un devis personnalisé en 24h.</p>
+        <div class="btn-group reveal">
+            <a href="quote.html" class="btn">Demander un devis</a>
+            <a href="https://wa.me/243815851746" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
     <footer>
         <div class="footer-container">
             <div class="footer-col">
                 <div class="logo-footer">SORA</div>
-                <p class="desc">Votre agence d'accueil événementiel indépendante pour la France et l'international. Élégance et professionnalisme au cœur de notre mission.</p>
+                <p class="desc">Agence spécialisée en gestion & coordination d'événements corporate. Accueil événementiel, sécurité, street marketing.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -1219,49 +1021,40 @@
             <div class="footer-col">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="services.html#event">Accueil événementiel</a></li>
-                    <li><a href="services.html#hostesses">Hôtesses d'excellence</a></li>
-                    <li><a href="services.html#vip">Accompagnement VIP</a></li>
-                    <li><a href="services.html#marketing">Street marketing</a></li>
+                    <li><a href="services/event.html">Accueil événementiel</a></li>
+                    <li><a href="services/hostesses.html">Hôtesses d'excellence</a></li>
+                    <li><a href="services/vip.html">Accompagnement VIP</a></li>
+                    <li><a href="services/marketing.html">Street marketing</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
-                <p>📞 +33 (0)1 23 45 67 89</p>
+                <p>📞 +243 81 585 1746</p>
                 <p>✉️ contact@sora-agency.fr</p>
-                <p>📍 Paris, France</p>
+                <p>📍 Kolwezi, Lualaba, RDC</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 SORA Agency — Tous droits réservés. Agence d'accueil certifiée.</p>
+            <p>© 2026 SORA Agency — Tous droits réservés.</p>
+            <p style="font-size: 0.65rem; margin-top: 0.3rem; color: rgba(255,255,255,0.15);">Photos par <strong>Malken Photography</strong></p>
         </div>
     </footer>
 
-    <!-- ============================================================
-    WHATSAPP FLOTTANT
-    ============================================================ -->
-    <a href="#" class="whatsapp-float" aria-label="WhatsApp">
+    <a href="https://wa.me/243815851746" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- ============================================================
-    SCRIPTS
-    ============================================================ -->
     <script>
-        // Menu mobile
         function toggleMenu() {
             document.getElementById('menu').classList.toggle('active');
         }
-
         document.querySelectorAll('#menu a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('menu').classList.remove('active');
             });
         });
 
-        // REVEAL
         const revealElements = document.querySelectorAll('.reveal');
-
         const checkReveal = () => {
             const windowHeight = window.innerHeight;
             revealElements.forEach(el => {
@@ -1271,16 +1064,13 @@
                 }
             });
         };
-
         window.addEventListener('scroll', checkReveal, { passive: true });
         window.addEventListener('load', checkReveal);
         window.addEventListener('resize', checkReveal, { passive: true });
 
-        // HEADER SCROLL
         const header = document.querySelector('header');
         window.addEventListener('scroll', () => {
-            const currentScroll = window.scrollY;
-            if (currentScroll > 60) {
+            if (window.scrollY > 60) {
                 header.style.background = "rgba(10,10,10,0.98)";
                 header.style.padding = "0.9rem 6%";
             } else {
@@ -1289,7 +1079,6 @@
             }
         }, { passive: true });
 
-        // PARALLAX
         const heroBg = document.querySelector('.hero-bg');
         window.addEventListener('scroll', () => {
             const scrolled = window.scrollY;
@@ -1298,7 +1087,6 @@
             }
         }, { passive: true });
 
-        // FORMULAIRE CONTACT
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             document.getElementById('formResponse').innerHTML = "✅ Message envoyé ! Nous vous répondrons sous 48h.";
